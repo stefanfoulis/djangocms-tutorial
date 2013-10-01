@@ -1,14 +1,13 @@
 djangoCMS Tutorial - Step 3
 ===========================
-django-poll-app to cmsApp
--------------------------
-Follow this tutorial to create a new django App: <https://docs.djangoproject.com/en/dev/intro/tutorial01/>
+In this part of the tutorial we're going to take a django app and modify it like that so we can use it in the CMS. We're gonna use the django-poll app.
 
-or for the lazy ones: <https://github.com/Chive/django-poll-app> - I knew it would come to use at some point @pat ;)
+You can either complete the tutorial here <https://docs.djangoproject.com/en/dev/intro/tutorial01/> or copy and extract the zip `polls.zip` from `djangocms-tutorial/sources` to the project root.
+
+You should end up with this structure:
 
 ```
-cd src
-svn export https://github.com/Chive/django-poll-app/trunk/polls
+do
 ```
 
 
