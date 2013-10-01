@@ -20,10 +20,10 @@ CMS a Django project to live in, and configure it.
 ```
 # Start django project
 $ cd djangocms-tutorial
-$ django-admin.py startproject demo
+$ django-admin.py startproject myproject
 
 # make virtualenv for project + install project dependencies
-$ cd demo
+$ cd myproject
 $ virtualenv --no-site-packages env
 $ source env/bin/activate
 $ pip install --upgrade django
