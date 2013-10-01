@@ -8,9 +8,7 @@ At first, we need to install the extension from the python Package Index (rememb
 
 ```
 $ source env/bin/activate
-
-  # Credentials in passpack (pkg.divio.ch / Access)
-$ pip install aldryn-blog --extra-index-url http://pkg.divio.ch
+$ pip install aldryn-blog
 ```
 
 Add the apps below to `INSTALLED_APPS`
@@ -28,7 +26,7 @@ INSTALLED_APPS = [
     …
 ]
 ```
-Since we added a new app, we need to update our database. Thankfully, django comes with set of awesome tools which do most of the job. We just need to run the following two commands
+Since we added a new app, we need to update our database. Thankfully, django comes with set of awesome tools which do most of the job. We just need to run the following two commands:
 
 ```
 $ python manage.py syncdb
@@ -40,11 +38,13 @@ and it's done. We can now run our server again
 ```
 $ python manage.py runserver
 ```
-Now go to the admin panel at localhost:8000/admin and
+Now go to the admin panel at [localhost:8000/admin](localhost:8000/admin) and
 
 * Create a new page
 * Go to advanced settings
 * Hook the 'Blog' Application and give it a namespace (e.g. 'myblog')
 * restart server
 * Now to Admin > Aldryn Blog > Add post
-* Voila
+* Voila :)
+
+Quick, check out [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)!
