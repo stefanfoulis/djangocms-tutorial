@@ -15,8 +15,7 @@ Installing the CMS
 ------------------
 ```
 $ cd ~/workspace
-$ mkdir demo
-$ cd demo
+$ mkdir demo && cd demo
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
 $ aldryn -p . my_demo
