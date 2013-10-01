@@ -25,4 +25,4 @@ $ python manage.py runserver
 
 ### Where to go from here
 
-Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch 'step-2' (You should know how that works by now :)
+Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) (You should know how that works by now :)
