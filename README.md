@@ -18,7 +18,6 @@ Add the apps below to `INSTALLED_APPS`
 ```
 INSTALLED_APPS = [
     …
-
     'aldryn_blog',
     'django_select2',
     'djangocms_text_ckeditor',
