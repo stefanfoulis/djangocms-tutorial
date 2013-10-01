@@ -2,23 +2,28 @@ djangoCMS Tutorial - Step 1
 ===========================
 Hey, you made it! Awesome. Now let's get started by setting up our environment.
 
-Preparing the environment
--------------------------
+Preparing your workstation
+--------------------------
 
 ```
-# Install dependencies
 $ pip install --upgrade virtualenv
-$ pip install --upgrade django
-$ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 Installing the CMS
 ------------------
 ```
-$ cd ~/workspace
+# Make a project folder
+$ cd ~/workspace	
 $ mkdir demo && cd demo
+
+# Setup virtual environment
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
+$ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
+
+# install djangoCMS (follow the recommandations in the brackets by just hitting enter on most prompts, don't worry if the setup takes a while :)
 $ aldryn -p . my_demo
+
+# let's run it
 $ python manage.py runserver
 ```
 
