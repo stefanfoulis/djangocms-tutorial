@@ -12,7 +12,7 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 cd djangocms-tutorial
 ```
 
-Now checkout branch `step-1` to get going!
+Now checkout branch [`step-1`](https://github.com/Chive/djangocms-tutorial/tree/step-1) to get going!
 
 ```
 git checkout step-1
