@@ -37,7 +37,7 @@ and it's done. We can now run our server again
 ```
 $ python manage.py runserver
 ```
-Now go to the admin panel at [localhost:8000/admin](localhost:8000/admin) and
+Now go to the admin panel at [localhost:8000/admin](http://localhost:8000/admin) and
 
 * Go to _Cms_ > _Pages_ and add a new page
 * Go to the advanced settings of the page we just created
