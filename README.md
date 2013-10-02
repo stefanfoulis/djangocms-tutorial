@@ -34,7 +34,7 @@ $ aldryn -p . my_demo
 § Django version (choices: 1.4, 1.5, stable) [default stable]: 1.5
 § Activate Django I18N / L10N setting (choices: yes, no) [default yes]: [ENTER]
 § Install and configure reversion support (choices: yes, no) [default yes]: [ENTER]
-§ Languages to enable. Option can be provided multiple times, or as a comma separated list: en,de
+§ Languages to enable. Option can be provided multiple times, or as a comma separated list: en
 § Optional default time zone [default America/Chicago]: Europe/Zurich
 § Activate Django timezone support (choices: yes, no) [default yes]: [ENTER]
 § Activate CMS permission management (choices: yes, no) [default yes]: [ENTER]
