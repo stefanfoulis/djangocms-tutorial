@@ -1,6 +1,13 @@
 djangoCMS Tutorial
 ==================
 
+Prerequisites / Requirements
+----------------------------
+* python
+* git
+* pip
+* ..more?
+
 Start
 -----
 In order to start, you first need to clone this repository. Open a shell,
