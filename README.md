@@ -23,12 +23,15 @@ $ source env/bin/activate
 $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 ### install djangoCMS
-follow the interactive setup, we used the settings below.
-don't worry if the setup takes a while :)
+follow the interactive setup, don't worry if the setup takes a while :)
 
 ```
 $ aldryn -p . my_demo
+```
 
+If you want to be safe, use the settings below:
+
+```
 § Database configuration (in URL format) [default sqlite://locahost/project.db]: [ENTER]
 § django CMS version (choices: 2.4, stable, beta, develop) [default stable]: develop
 § Django version (choices: 1.4, 1.5, stable) [default stable]: 1.5
@@ -40,7 +43,7 @@ $ aldryn -p . my_demo
 § Activate CMS permission management (choices: yes, no) [default yes]: [ENTER]
 
 § Username: admin
-§ Email address: admin@admin.com 
+§ Email address: admin@example.com 
 § Password: admin
 ```
 
