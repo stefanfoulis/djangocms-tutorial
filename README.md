@@ -37,7 +37,7 @@ If you want to be safe, use the settings below:
 § Django version (choices: 1.4, 1.5, stable) [default stable]: 1.5
 § Activate Django I18N / L10N setting (choices: yes, no) [default yes]: [ENTER]
 § Install and configure reversion support (choices: yes, no) [default yes]: [ENTER]
-§ Languages to enable. Option can be provided multiple times, or as a comma separated list: en
+§ Languages to enable. Option can be provided multiple times, or as a comma separated list: en,de
 § Optional default time zone [default America/Chicago]: Europe/Zurich
 § Activate Django timezone support (choices: yes, no) [default yes]: [ENTER]
 § Activate CMS permission management (choices: yes, no) [default yes]: [ENTER]
