@@ -11,7 +11,7 @@ $ source env/bin/activate
 $ pip install aldryn-blog
 ```
 
-Add the apps below to `INSTALLED_APPS`
+Add the apps below to `INSTALLED_APPS` in `settings.py`:
 
 ```
 INSTALLED_APPS = [
