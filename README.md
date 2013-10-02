@@ -21,7 +21,6 @@ INSTALLED_APPS = [
     'djangocms_text_ckeditor',
     'easy_thumbnails',
     'filer',
-    'hvad',
     'taggit',
     …
 ]
@@ -40,11 +39,11 @@ $ python manage.py runserver
 ```
 Now go to the admin panel at [localhost:8000/admin](localhost:8000/admin) and
 
-* Create a new page
-* Go to advanced settings
-* Hook the 'Blog' Application and give it a namespace (e.g. 'myblog')
-* restart server
-* Now to Admin > Aldryn Blog > Add post
+* Go to _Cms_ > _Pages_ and add a new page
+* Go to the advanced settings of the page we just created
+* Under _Application_, select the 'Blog' application and give it a namespace (e.g. `myblog`)
+* restart the server (`CTRL+C` and `python manage.py runserver` again)
+* Now go to _Aldryn Blog_ and add a new post
 * Voila :)
 
 Quick, check out [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)!
