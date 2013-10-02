@@ -23,7 +23,7 @@ $ source env/bin/activate
 $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 ### install djangoCMS
-follow the interactive setup, don't worry if the setup takes a while :)
+follow the interactive setup, don't worry if takes a while :)
 
 ```
 $ aldryn -p . my_demo
