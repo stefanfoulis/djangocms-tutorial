@@ -4,7 +4,7 @@ In this part of the tutorial we're going to take a django app and modify it like
 
 You can either complete the tutorial here <https://docs.djangoproject.com/en/dev/intro/tutorial01/> or copy the folder `polls` from `djangocms-tutorial/sources/` to your project root.
 
-```
+```bash
 ~/workspace/demo $ cp -r ../djangocms-tutorial/sources/polls .
 ```
 
@@ -50,7 +50,7 @@ For our polling app we would like to have a small poll plugin which shows a poll
 
 In your poll application’s `models.py` add the following:
 
-```
+```python
 from cms.models import CMSPlugin
 
 class PollPlugin(CMSPlugin):
@@ -67,7 +67,7 @@ Now create a file `cms_plugins.py` in the same folder your models.py is in. The 
 
 For our poll plugin, write the following plugin class:
 
-```
+```python
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from polls.models import PollPlugin as PollPluginModel
@@ -92,7 +92,7 @@ You probably noticed the render_template attribute in the above plugin class. In
 
 The template is located at `polls/templates/polls/plugin.html` and should look something like this:
 
-```
+```html
 <h1>{{ instance.poll.question }}</h1>
 
 <form action="{% url polls.views.vote instance.poll.id %}" method="post">
@@ -109,7 +109,7 @@ The template is located at `polls/templates/polls/plugin.html` and should look s
 
 Quite some work done by now, let's add it to our project. Add your polls plugin to the `INSTALLED_APPS` in your projects `settings.py`:
 
-```
+```python
 INSTALLED_APPS = (
 
 	...
@@ -122,7 +122,7 @@ INSTALLED_APPS = (
 
 Secondly, add it to the project's `urls.py` so it looks something like this:
 
-```
+```python
 urlpatterns = i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^polls/', include('polls.urls')),
@@ -133,7 +133,7 @@ urlpatterns = i18n_patterns('',
 
 Now to create the database tables for this model (using South):
 
-```
+```bash
 $ python manage.py schemamigration polls --initial
 $ python manage.py migrate polls
 ```
@@ -160,7 +160,7 @@ polls/
 
 In this file, write:
 
-```
+```python
 from cms.app_base import CMSApp
 from cms.apphook_pool import apphook_pool
 from django.utils.translation import ugettext_lazy as _
@@ -174,7 +174,7 @@ apphook_pool.register(PollsApp) # register your app
 
 Now remove the inclusion of the polls urls in your project's `urls.py` so it looks like this:
 
-```
+```python
 urlpatterns = i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
@@ -204,7 +204,7 @@ polls/
 
 In your `menu.py` write:
 
-```
+```python
 from cms.menu_bases import CMSAttachMenu
 from menus.base import Menu, NavigationNode
 from menus.menu_pool import menu_pool
@@ -239,7 +239,7 @@ At this point this menu alone doesn’t do a whole lot. We have to attach it to 
 
 So open your `cms_apps.py` and write:
 
-```
+```python
 from cms.app_base import CMSApp
 from cms.apphook_pool import apphook_pool
 from polls.menu import PollsMenu
