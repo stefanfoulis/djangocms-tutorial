@@ -16,8 +16,6 @@ and setup your environment:
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
 $ pip install -r requirements.txt
-$ python manage.py syncdb --all
-$ python manage.py migrate --fake
 ```
 
 
