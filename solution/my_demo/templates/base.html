@@ -1,0 +1,12 @@
+{% load cms_tags sekizai_tags stack_tags %}
+<html>
+  <head>
+      {% render_block "css" %}
+  </head>
+  <body>
+      {% cms_toolbar %}
+      {% stack content %}
+      {% block content %}{% endblock %}
+      {% render_block "js" %}
+  </body>
+</html>
