@@ -6,14 +6,14 @@ Next up, we want to extend djangoCMS by installing an app. We're gonna be using 
 
 At first, we need to install the extension from the python Package Index (remember, always in the virtual environment!):
 
-```
+```bash
 $ source env/bin/activate
 $ pip install aldryn-blog
 ```
 
 Add the apps below to `INSTALLED_APPS` in `settings.py`:
 
-```
+```python
 INSTALLED_APPS = [
     …
     'aldryn_blog',
@@ -27,7 +27,7 @@ INSTALLED_APPS = [
 ```
 Since we added a new app, we need to update our database. Thankfully, django comes with set of awesome tools which do most of the job. We just need to run the following two commands:
 
-```
+```bash
 $ python manage.py syncdb
 $ python manage.py migrate
 ```
@@ -36,13 +36,13 @@ and it's done.
 
 Finally, we need to copy a html template for our blog to our project:
 
-```
+```bash
 cp ../djangocms-tutorial/sources/base.html my_demo/templates/
 ```
 
 We can now run our server again
 
-```
+```bash
 $ python manage.py runserver
 ```
 Now go to the admin panel at [localhost:8000/admin](http://localhost:8000/admin) and
