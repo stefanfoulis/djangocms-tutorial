@@ -9,5 +9,7 @@ do
 done
 
 git checkout master
-
 echo -e "$text" > README.md
+git add README.md
+git commit -m "Updated README by Script"
+git push
