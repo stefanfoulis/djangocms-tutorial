@@ -4,6 +4,10 @@ In this part of the tutorial we're going to take a django app and modify it like
 
 You can either complete the tutorial here <https://docs.djangoproject.com/en/dev/intro/tutorial01/> or copy the folder `polls` from `djangocms-tutorial/sources/` to your project root.
 
+```
+~/workspace/demo $ cp -r ../djangocms-tutorial/sources/polls .
+```
+
 You should end up with this folder structure:
 
 ```
@@ -16,6 +20,7 @@ workspace
 			__init__.py
 			settings.py
 			templates/
+				base.html
 				index.html
 				page.html
 			urls.py
@@ -34,6 +39,7 @@ workspace
 			urls.py
 			views.py
 		project.db
+		requirements.txt
 ```
 
 
