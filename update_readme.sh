@@ -1,7 +1,8 @@
 #!/bin/bash
-git checkout gh-pages
+git checkout start
+text="$(cat README.md)"
 
-for branch in start step-1 step-2 step-3 step-4 step-5 step-6
+for branch in step-1 step-2 step-3 step-4 step-5 step-6
 do
 	git checkout $branch
 	text="$text\n\n$(cat README.md)"
