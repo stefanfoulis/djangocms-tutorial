@@ -7,6 +7,8 @@ do
 	text="$text\n\n$(cat README.md)"
 done
 
+git checkout gh-pages
+
 echo -e "$text" > publish_me.md
 echo -e "$text" | pandoc -f markdown -t html -o publish_me.html
 
@@ -14,5 +16,3 @@ echo -e "$text" | pandoc -f markdown -t html -o publish_me.html
 #git add index.html
 #git commit -m "updated README"
 #git push
-
-git checkout gh-pages
