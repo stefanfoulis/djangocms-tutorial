@@ -5,33 +5,37 @@ Hey, you made it! Awesome. Now let's get started by setting up our environment.
 Preparing your workstation
 --------------------------
 
-```
+```bash
 $ pip install --upgrade virtualenv
 ```
 Installing the CMS
 ------------------
 
 ### Make a project folder
-```
+
+```bash
 $ cd ~/workspace	
 $ mkdir demo && cd demo
 ```
+
 ### Setup virtual environment
-```
+
+```bash
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
 $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
+
 ### install djangoCMS
 follow the interactive setup, don't worry if takes a while :)
 
-```
+```bash
 $ aldryn -p . my_demo
 ```
 
 If you want to be safe, use the settings below:
 
-```
+```bash
 § Database configuration (in URL format) [default sqlite://locahost/project.db]: [ENTER]
 § django CMS version (choices: 2.4, stable, beta, develop) [default stable]: develop
 § Django version (choices: 1.4, 1.5, stable) [default stable]: 1.5
@@ -48,7 +52,7 @@ If you want to be safe, use the settings below:
 ```
 
 ### let's run it
-```
+```bash
 $ python manage.py runserver
 ```
 
