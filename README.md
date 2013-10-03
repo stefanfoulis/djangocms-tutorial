@@ -35,7 +35,7 @@ class MoopModifier(CMSToolbar):
         pass
 ```
 
-7.2. Adding items
+### Adding items
 Items can be added through the various APIs exposed by the toolbar and its items.
 
 To add a `cms.toolbar.items.Menu` to the toolbar, use `cms.toolbar.toolbar.CMSToolbar.get_or_create_menu()` which will either add a menu if it doesn’t exist, or create it.
