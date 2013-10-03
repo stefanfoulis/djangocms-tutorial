@@ -1,2 +1,2 @@
-djangoCMS Tutorial - Step X
+djangoCMS Tutorial - Step 6
 ===========================
