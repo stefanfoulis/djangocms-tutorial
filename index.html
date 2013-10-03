@@ -38,7 +38,665 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
 
-        <p>none</p>
+        <h1>
+<a name="djangocms-tutorial" class="anchor" href="#djangocms-tutorial"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial</h1>
+
+<h2>
+<a name="prerequisites--requirements" class="anchor" href="#prerequisites--requirements"><span class="octicon octicon-link"></span></a>Prerequisites / Requirements</h2>
+
+<ul>
+<li>python</li>
+<li>git</li>
+<li>pip</li>
+<li>..more?</li>
+</ul><h2>
+<a name="start" class="anchor" href="#start"><span class="octicon octicon-link"></span></a>Start</h2>
+
+<p>In order to start, you first need to clone this repository. Open a shell,
+cd into your workspace and git clone the tutorial</p>
+
+<div class="highlight highlight-bash"><pre><span class="nb">cd</span> ~/workspace
+git clone git@github.com:Chive/djangocms-tutorial.git
+<span class="nb">cd </span>djangocms-tutorial
+</pre></div>
+
+<p>Now checkout branch <a href="https://github.com/Chive/djangocms-tutorial/tree/step-1"><code>step-1</code></a> to get going!</p>
+
+<div class="highlight highlight-bash"><pre>git checkout step-1
+</pre></div>
+
+<h1>
+<a name="djangocms-tutorial---step-1" class="anchor" href="#djangocms-tutorial---step-1"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 1</h1>
+
+<p>Hey, you made it! Awesome. Now let's get started by setting up our environment.</p>
+
+<h2>
+<a name="preparing-your-workstation" class="anchor" href="#preparing-your-workstation"><span class="octicon octicon-link"></span></a>Preparing your workstation</h2>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>pip install --upgrade virtualenv
+</pre></div>
+
+<h2>
+<a name="installing-the-cms" class="anchor" href="#installing-the-cms"><span class="octicon octicon-link"></span></a>Installing the CMS</h2>
+
+<h3>
+<a name="make-a-project-folder" class="anchor" href="#make-a-project-folder"><span class="octicon octicon-link"></span></a>Make a project folder</h3>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/workspace    
+<span class="nv">$ </span>mkdir demo <span class="o">&amp;&amp;</span> <span class="nb">cd </span>demo
+</pre></div>
+
+<h3>
+<a name="setup-virtual-environment" class="anchor" href="#setup-virtual-environment"><span class="octicon octicon-link"></span></a>Setup virtual environment</h3>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>virtualenv env --no-site-packages
+<span class="nv">$ </span><span class="nb">source </span>env/bin/activate
+<span class="nv">$ </span>pip install -e git+https://github.com/nephila/aldryn-installer#egg<span class="o">=</span>aldryn-installer
+</pre></div>
+
+<h3>
+<a name="install-djangocms" class="anchor" href="#install-djangocms"><span class="octicon octicon-link"></span></a>install djangoCMS</h3>
+
+<p>follow the interactive setup, don't worry if takes a while :)</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>aldryn -p . my_demo
+</pre></div>
+
+<p>If you want to be safe, use the settings below:</p>
+
+<div class="highlight highlight-bash"><pre>§ Database configuration <span class="o">(</span>in URL format<span class="o">)</span> <span class="o">[</span>default sqlite://locahost/project.db<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+§ django CMS version <span class="o">(</span>choices: 2.4, stable, beta, develop<span class="o">)</span> <span class="o">[</span>default stable<span class="o">]</span>: develop
+§ Django version <span class="o">(</span>choices: 1.4, 1.5, stable<span class="o">)</span> <span class="o">[</span>default stable<span class="o">]</span>: 1.5
+§ Activate Django I18N / L10N setting <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+§ Install and configure reversion support <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+§ Languages to enable. Option can be provided multiple <span class="nb">times</span>, or as a comma separated list: en,de
+§ Optional default timezone <span class="o">[</span>default America/Chicago<span class="o">]</span>: Europe/Zurich
+§ Activate Django timezone support <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+§ Activate CMS permission management <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+
+§ Username: admin
+§ Email address: admin@example.com 
+§ Password: admin
+</pre></div>
+
+<h3>
+<a name="lets-run-it" class="anchor" href="#lets-run-it"><span class="octicon octicon-link"></span></a>let's run it</h3>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py runserver
+</pre></div>
+
+<h3>
+<a name="where-to-go-from-here" class="anchor" href="#where-to-go-from-here"><span class="octicon octicon-link"></span></a>Where to go from here</h3>
+
+<p>Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch <a href="https://github.com/Chive/djangocms-tutorial/tree/step-2"><code>step-2</code></a> (You should know how that works by now :)</p>
+
+<h1>
+<a name="djangocms-tutorial---step-2" class="anchor" href="#djangocms-tutorial---step-2"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 2</h1>
+
+<p>Still with us? Great! So far we set up our environment by installing django, djangoCMS and all necessary dependencies. We also configured djangoCMS and ran it for the first time.</p>
+
+<p>Next up, we want to extend djangoCMS by installing an app. We're gonna be using the aldryn_blog module for this example. Let's get going!</p>
+
+<p>At first, we need to install the extension from the python Package Index (remember, always in the virtual environment!):</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">source </span>env/bin/activate
+<span class="nv">$ </span>pip install aldryn-blog
+</pre></div>
+
+<p>Add the apps below to <code>INSTALLED_APPS</code> in <code>settings.py</code>:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="err">…</span>
+    <span class="s">'aldryn_blog'</span><span class="p">,</span>
+    <span class="s">'django_select2'</span><span class="p">,</span>
+    <span class="s">'djangocms_text_ckeditor'</span><span class="p">,</span>
+    <span class="s">'easy_thumbnails'</span><span class="p">,</span>
+    <span class="s">'filer'</span><span class="p">,</span>
+    <span class="s">'taggit'</span><span class="p">,</span>
+    <span class="err">…</span>
+<span class="p">]</span>
+</pre></div>
+
+<p>Since we added a new app, we need to update our database. Thankfully, django comes with set of awesome tools which do most of the job. We just need to run the following two commands:</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py syncdb
+<span class="nv">$ </span>python manage.py migrate
+</pre></div>
+
+<p>and it's done.</p>
+
+<p>Finally, we need to copy a html template for our blog to our project:</p>
+
+<div class="highlight highlight-bash"><pre>cp ../djangocms-tutorial/sources/base.html my_demo/templates/
+</pre></div>
+
+<p>We can now run our server again</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py runserver
+</pre></div>
+
+<p>Now go to the admin panel at <a href="http://localhost:8000/admin">localhost:8000/admin</a> and</p>
+
+<ul>
+<li>Go to <em>Cms</em> &gt; <em>Pages</em> and add a new page</li>
+<li>Go to the advanced settings of the page we just created</li>
+<li>Under <em>Application</em>, select the 'Blog' application and give it a namespace (e.g. <code>myblog</code>)</li>
+<li>Save and publish the page</li>
+<li>Restart the server (<code>CTRL+C</code> and <code>python manage.py runserver</code> again)</li>
+<li>Now go to <em>Aldryn Blog</em> and add a new post</li>
+<li>Voila :)</li>
+</ul><p>Quick, check out <a href="https://github.com/Chive/djangocms-tutorial/tree/step-3"><code>step-3</code></a>!</p>
+
+<h1>
+<a name="djangocms-tutorial---step-3" class="anchor" href="#djangocms-tutorial---step-3"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 3</h1>
+
+<p>In this part of the tutorial we're going to take a django app and modify it like that so we can use it in the CMS. We're gonna use the django-poll app.</p>
+
+<p>You can either complete the tutorial here <a href="https://docs.djangoproject.com/en/dev/intro/tutorial01/">https://docs.djangoproject.com/en/dev/intro/tutorial01/</a> or copy the folder <code>polls</code> from <code>djangocms-tutorial/sources/</code> to your project root.</p>
+
+<div class="highlight highlight-bash"><pre>~/workspace/demo <span class="nv">$ </span>cp -r ../djangocms-tutorial/sources/polls .
+</pre></div>
+
+<p>You should end up with this folder structure:</p>
+
+<pre><code>workspace
+    djangocms-tutorial/
+    my_demo/
+        env/
+        manage.py
+        my_demo/
+            __init__.py
+            settings.py
+            templates/
+                base.html
+                index.html
+                page.html
+            urls.py
+            wsgi.py
+        polls/
+            README.md
+            __init__.py
+            admin.py
+            models.py
+            templates/
+                polls/
+                    detail.html
+                    index.html
+                    results.html
+            tests.py
+            urls.py
+            views.py
+        project.db
+        requirements.txt
+</code></pre>
+
+<h2>
+<a name="our-first-plugin" class="anchor" href="#our-first-plugin"><span class="octicon octicon-link"></span></a>Our first plugin</h2>
+
+<h3>
+<a name="the-model" class="anchor" href="#the-model"><span class="octicon octicon-link"></span></a>The Model</h3>
+
+<p>For our polling app we would like to have a small poll plugin which shows a poll and lets the user vote.</p>
+
+<p>In your poll application’s <code>models.py</code> add the following:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.models</span> <span class="kn">import</span> <span class="n">CMSPlugin</span>
+
+<span class="k">class</span> <span class="nc">PollPlugin</span><span class="p">(</span><span class="n">CMSPlugin</span><span class="p">):</span>
+    <span class="n">poll</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'polls.Poll'</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s">'plugins'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll</span><span class="o">.</span><span class="n">question</span>
+</pre></div>
+
+<p><strong>Note:</strong> django CMS plugins must inherit from <code>cms.models.CMSPlugin</code> (or a subclass thereof) and not <code>models.Model</code>.</p>
+
+<h3>
+<a name="the-plugin-class" class="anchor" href="#the-plugin-class"><span class="octicon octicon-link"></span></a>The Plugin Class</h3>
+
+<p>Now create a file <code>cms_plugins.py</code> in the same folder your models.py is in. The plugin class is responsible for providing the django CMS with the necessary information to render your Plugin.</p>
+
+<p>For our poll plugin, write the following plugin class:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.plugin_base</span> <span class="kn">import</span> <span class="n">CMSPluginBase</span>
+<span class="kn">from</span> <span class="nn">cms.plugin_pool</span> <span class="kn">import</span> <span class="n">plugin_pool</span>
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">PollPlugin</span> <span class="k">as</span> <span class="n">PollPluginModel</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="k">class</span> <span class="nc">PollPlugin</span><span class="p">(</span><span class="n">CMSPluginBase</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">PollPluginModel</span> <span class="c"># Model where data about this plugin is saved</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Poll Plugin"</span><span class="p">)</span> <span class="c"># Name of the plugin</span>
+    <span class="n">render_template</span> <span class="o">=</span> <span class="s">"polls/plugin.html"</span> <span class="c"># template to render the plugin with</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">placeholder</span><span class="p">):</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">'instance'</span><span class="p">:</span><span class="n">instance</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+<span class="n">plugin_pool</span><span class="o">.</span><span class="n">register_plugin</span><span class="p">(</span><span class="n">PollPlugin</span><span class="p">)</span> <span class="c"># register the plugin</span>
+</pre></div>
+
+<p><strong>Note</strong>: All plugin classes must inherit from <code>cms.plugin_base.CMSPluginBase</code> and must register themselves with the <code>cms.plugin_pool.plugin_pool</code>.</p>
+
+<h3>
+<a name="the-template" class="anchor" href="#the-template"><span class="octicon octicon-link"></span></a>The Template</h3>
+
+<p>You probably noticed the render_template attribute in the above plugin class. In order for our plugin to work, that template must exist and is responsible for rendering the plugin.</p>
+
+<p>The template is located at <code>polls/templates/polls/plugin.html</code> and should look something like this:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;h1&gt;</span>{{ instance.poll.question }}<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"{% url polls.views.vote instance.poll.id %}"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    {% csrf_token %}
+    {% for choice in instance.poll.choice_set.all %}
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"choice"</span> <span class="na">id=</span><span class="s">"choice{{ forloop.counter }}"</span> <span class="na">value=</span><span class="s">"{{ choice.id }}"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"choice{{ forloop.counter }}"</span><span class="nt">&gt;</span>{{ choice.choice }}<span class="nt">&lt;/label&gt;&lt;br</span> <span class="nt">/&gt;</span>
+    {% endfor %}
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Vote"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+
+<p><strong>Note</strong>: We don’t show the errors here, because when submitting the form you’re taken off this page to the actual voting page.</p>
+
+<p>Quite some work done by now, let's add it to our project. Add your polls plugin to the <code>INSTALLED_APPS</code> in your projects <code>settings.py</code>:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+
+    <span class="o">...</span>
+
+    <span class="s">'polls'</span><span class="p">,</span>
+
+    <span class="o">...</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Secondly, add it to the project's <code>urls.py</code> so it looks something like this:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">i18n_patterns</span><span class="p">(</span><span class="s">''</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^admin/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^polls/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'polls.urls'</span><span class="p">)),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^sitemap\.xml$'</span><span class="p">,</span> <span class="s">'django.contrib.sitemaps.views.sitemap'</span><span class="p">,</span> <span class="p">{</span><span class="s">'sitemaps'</span><span class="p">:</span> <span class="p">{</span><span class="s">'cmspages'</span><span class="p">:</span> <span class="n">CMSSitemap</span><span class="p">}}),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'cms.urls'</span><span class="p">)),</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Now to create the database tables for this model (using South):</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py schemamigration polls --initial
+<span class="nv">$ </span>python manage.py migrate polls
+</pre></div>
+
+<p>Finally, run the server and go visit <a href="http://localhost:8000/polls/">http://localhost:8000/polls/</a>. Yay!</p>
+
+<h3>
+<a name="my-first-app-apphook" class="anchor" href="#my-first-app-apphook"><span class="octicon octicon-link"></span></a>My First App (apphook)</h3>
+
+<p>Right now, external apps are statically hooked into the main <code>urls.py</code>. This is not the preferred approach in the django CMS. Ideally you attach your apps to CMS pages.</p>
+
+<p>For that purpose you write a CMSApp. That is just a small class telling the CMS how to include that app.</p>
+
+<p>CMS Apps live in a file called <code>cms_app.py</code>, so go ahead and create it to make your polls app look like this:</p>
+
+<pre><code>polls/
+    __init__.py
+    cms_app.py
+    cms_plugins.py
+    models.py
+    tests.py
+    views.py
+</code></pre>
+
+<p>In this file, write:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.app_base</span> <span class="kn">import</span> <span class="n">CMSApp</span>
+<span class="kn">from</span> <span class="nn">cms.apphook_pool</span> <span class="kn">import</span> <span class="n">apphook_pool</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="k">class</span> <span class="nc">PollsApp</span><span class="p">(</span><span class="n">CMSApp</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Poll App"</span><span class="p">)</span> <span class="c"># give your app a name, this is required</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"polls.urls"</span><span class="p">]</span> <span class="c"># link your app to url configuration(s)</span>
+
+<span class="n">apphook_pool</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PollsApp</span><span class="p">)</span> <span class="c"># register your app</span>
+</pre></div>
+
+<p>Now remove the inclusion of the polls urls in your project's <code>urls.py</code> so it looks like this:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">i18n_patterns</span><span class="p">(</span><span class="s">''</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^admin/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^sitemap\.xml$'</span><span class="p">,</span> <span class="s">'django.contrib.sitemaps.views.sitemap'</span><span class="p">,</span> <span class="p">{</span><span class="s">'sitemaps'</span><span class="p">:</span> <span class="p">{</span><span class="s">'cmspages'</span><span class="p">:</span> <span class="n">CMSSitemap</span><span class="p">}}),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'cms.urls'</span><span class="p">)),</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Now open your admin in your browser and edit a CMS Page. Open the ‘Advanced Settings’ tab and choose ‘Polls App’ for your ‘Application’. Just like we did with the blog some minutes ago.</p>
+
+<p>Again, for these changes to take effect, you will have to restart your server. So do that and afterwards if you navigate to that CMS Page, you will see your polls application.</p>
+
+<h3>
+<a name="my-first-menu" class="anchor" href="#my-first-menu"><span class="octicon octicon-link"></span></a>My First Menu</h3>
+
+<p>Now you might have noticed that the menu tree stops at the CMS Page you created in the last step. So let’s create a menu that shows a node for each poll you have active.</p>
+
+<p>For this we need a file called <code>menu.py</code>. Create it and ensure your polls app looks like this:</p>
+
+<pre><code>polls/
+    __init__.py
+    cms_app.py
+    cms_plugins.py
+    menu.py
+    models.py
+    tests.py
+    views.py
+</code></pre>
+
+<p>In your <code>menu.py</code> write:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.menu_bases</span> <span class="kn">import</span> <span class="n">CMSAttachMenu</span>
+<span class="kn">from</span> <span class="nn">menus.base</span> <span class="kn">import</span> <span class="n">Menu</span><span class="p">,</span> <span class="n">NavigationNode</span>
+<span class="kn">from</span> <span class="nn">menus.menu_pool</span> <span class="kn">import</span> <span class="n">menu_pool</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Poll</span>
+
+<span class="k">class</span> <span class="nc">PollsMenu</span><span class="p">(</span><span class="n">CMSAttachMenu</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Polls Menu"</span><span class="p">)</span> <span class="c"># give the menu a name, this is required.</span>
+
+    <span class="k">def</span> <span class="nf">get_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        This method is used to build the menu tree.</span>
+<span class="sd">        """</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">poll</span> <span class="ow">in</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="c"># the menu tree consists of NavigationNode instances</span>
+            <span class="c"># Each NavigationNode takes a label as its first argument, a URL as</span>
+            <span class="c"># its second argument and a (for this tree) unique id as its third</span>
+            <span class="c"># argument.</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">NavigationNode</span><span class="p">(</span>
+                <span class="n">poll</span><span class="o">.</span><span class="n">question</span><span class="p">,</span>
+                <span class="n">reverse</span><span class="p">(</span><span class="s">'polls.views.detail'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">poll</span><span class="o">.</span><span class="n">pk</span><span class="p">,)),</span>
+                <span class="n">poll</span><span class="o">.</span><span class="n">pk</span>
+            <span class="p">)</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nodes</span>
+<span class="n">menu_pool</span><span class="o">.</span><span class="n">register_menu</span><span class="p">(</span><span class="n">PollsMenu</span><span class="p">)</span> <span class="c"># register the menu.</span>
+</pre></div>
+
+<p>At this point this menu alone doesn’t do a whole lot. We have to attach it to the Apphook first.</p>
+
+<p>So open your <code>cms_apps.py</code> and write:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.app_base</span> <span class="kn">import</span> <span class="n">CMSApp</span>
+<span class="kn">from</span> <span class="nn">cms.apphook_pool</span> <span class="kn">import</span> <span class="n">apphook_pool</span>
+<span class="kn">from</span> <span class="nn">polls.menu</span> <span class="kn">import</span> <span class="n">PollsMenu</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="k">class</span> <span class="nc">PollsApp</span><span class="p">(</span><span class="n">CMSApp</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Poll App"</span><span class="p">)</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"polls.urls"</span><span class="p">]</span>
+    <span class="n">menus</span> <span class="o">=</span> <span class="p">[</span><span class="n">PollsMenu</span><span class="p">]</span> <span class="c"># attach a CMSAttachMenu to this apphook.</span>
+    <span class="n">app_name</span> <span class="o">=</span> <span class="s">'polls'</span>
+
+<span class="n">apphook_pool</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PollsApp</span><span class="p">)</span>
+</pre></div>
+
+<p>Phew, quite some work done. If you're still on fire, check out branch <a href="https://github.com/Chive/djangocms-tutorial/tree/step-4"><code>step-4</code></a>!</p>
+
+<h1>
+<a name="djangocms-tutorial---step-4" class="anchor" href="#djangocms-tutorial---step-4"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 4</h1>
+
+<h2>
+<a name="extending-the-toolbar" class="anchor" href="#extending-the-toolbar"><span class="octicon octicon-link"></span></a>Extending the Toolbar</h2>
+
+<p>In the new version 3.0 you can add and remove items to the toolbar. This allows you to integrate your application in the frontend editing mode of django CMS and provide your users with a streamlined editing experience.</p>
+
+<h3>
+<a name="registering" class="anchor" href="#registering"><span class="octicon octicon-link"></span></a>Registering</h3>
+
+<p>There are two ways to control what gets shown in the toolbar.</p>
+
+<p>One is the <code>CMS_TOOLBARS</code>. This gives you full control over which classes are loaded, but requires that you specify them all manually.</p>
+
+<p>The other is to provide <code>cms_toolbar.py</code> files in your apps, which will be automatically loaded as long <code>CMS_TOOLBARS</code> is not set (or set to <code>None</code>).</p>
+
+<p>If you use the automated way, your <code>cms_toolbar.py</code> file should contain classes that extend from <code>cms.toolbar_base.CMSToolbar</code> and are registered using <code>cms.toolbar_pool.toolbar_pool.register()</code>. The register function can be used as a decorator.</p>
+
+<p>These have four attributes:</p>
+
+<ul>
+<li>
+<code>toolbar</code> (the toolbar object)</li>
+<li>
+<code>request</code> (the current request)</li>
+<li>
+<code>is_current_app</code> (a flag indicating whether the current request is handled by the same app as the function is in)</li>
+<li>
+<code>app_path</code> (the name of the app used for the current request)</li>
+</ul><p>This classes must implement a populate function. The populate function will only be called if the current user is a staff user.</p>
+
+<p>A simple example, registering a class that does nothing:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.toolbar_pool</span> <span class="kn">import</span> <span class="n">toolbar_pool</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
+
+<span class="nd">@toolbar_pool.register</span>
+<span class="k">class</span> <span class="nc">MoopModifier</span><span class="p">(</span><span class="n">CMSToolbar</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+
+<h3>
+<a name="adding-items" class="anchor" href="#adding-items"><span class="octicon octicon-link"></span></a>Adding items</h3>
+
+<p>Items can be added through the various APIs exposed by the toolbar and its items.</p>
+
+<p>To add a <code>cms.toolbar.items.Menu</code> to the toolbar, use <code>cms.toolbar.toolbar.CMSToolbar.get_or_create_menu()</code> which will either add a menu if it doesn’t exist, or create it.</p>
+
+<p>Then, to add a link to your changelist that will open in the sideframe, use the <code>cms.toolbar.items.ToolbarMixin.add_sideframe_item()</code> method on the menu object returned.</p>
+
+<p>When adding items, all arguments other than the name or identifier should be given as keyword arguments. This will help ensure that your custom toolbar items survive upgrades.</p>
+
+<p>Following our Extending the CMS: Examples, let’s add the poll app to the toolbar:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_pool</span> <span class="kn">import</span> <span class="n">toolbar_pool</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
+
+<span class="nd">@toolbar_pool.register</span>
+<span class="k">class</span> <span class="nc">PollToolbar</span><span class="p">(</span><span class="n">CMSToolbar</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_current_app</span><span class="p">:</span>
+            <span class="n">menu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">get_or_create_menu</span><span class="p">(</span><span class="s">'poll-app'</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">'Polls'</span><span class="p">))</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:polls_poll_changelist'</span><span class="p">)</span>
+            <span class="n">menu</span><span class="o">.</span><span class="n">add_sideframe_item</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">'Poll overview'</span><span class="p">),</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+
+<p>However, there’s already a menu added by the CMS which provides access to various admin views, so you might want to add your menu as a sub menu there. To do this, you can use positional insertion coupled with the fact that <code>cms.toolbar.toolbar.CMSToolbar.get_or_create_menu()</code> will return already existing menus:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_pool</span> <span class="kn">import</span> <span class="n">toolbar_pool</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar.items</span> <span class="kn">import</span> <span class="n">Break</span>
+<span class="kn">from</span> <span class="nn">cms.cms_toolbar</span> <span class="kn">import</span> <span class="n">ADMIN_MENU_IDENTIFIER</span><span class="p">,</span> <span class="n">ADMINISTRATION_BREAK</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
+
+<span class="nd">@toolbar_pool.register</span>
+<span class="k">class</span> <span class="nc">PollToolbar</span><span class="p">(</span><span class="n">CMSToolbar</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">admin_menu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">get_or_create_menu</span><span class="p">(</span><span class="n">ADMIN_MENU_IDENTIFIER</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">'Site'</span><span class="p">))</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">admin_menu</span><span class="o">.</span><span class="n">find_first</span><span class="p">(</span><span class="n">Break</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="n">ADMINISTRATION_BREAK</span><span class="p">)</span>
+        <span class="n">menu</span> <span class="o">=</span> <span class="n">admin_menu</span><span class="o">.</span><span class="n">get_or_create_menu</span><span class="p">(</span><span class="s">'poll-menu'</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">'Polls'</span><span class="p">),</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:polls_poll_changelist'</span><span class="p">)</span>
+        <span class="n">menu</span><span class="o">.</span><span class="n">add_sideframe_item</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">'Poll overview'</span><span class="p">),</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">admin_menu</span><span class="o">.</span><span class="n">add_break</span><span class="p">(</span><span class="s">'poll-break'</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">menu</span><span class="p">)</span>
+</pre></div>
+
+<h3>
+<a name="adding-items-through-views" class="anchor" href="#adding-items-through-views"><span class="octicon octicon-link"></span></a>Adding items through views</h3>
+
+<p>Another way to add items to the toolbar is through our own views (<code>polls/views.py</code>). This method can be useful if you need to access certain variables, in our case e.g. the selected poll and its sub-methods:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span><span class="p">,</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Poll</span>
+
+
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">poll_id</span><span class="p">):</span>
+    <span class="n">poll</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">poll_id</span><span class="p">)</span>
+
+    <span class="n">request</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">populate</span><span class="p">()</span>
+    <span class="n">menu</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">get_or_create_menu</span><span class="p">(</span><span class="s">'polls-app'</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">'Polls'</span><span class="p">))</span>
+    <span class="n">menu</span><span class="o">.</span><span class="n">add_modal_item</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">'Change this Poll'</span><span class="p">),</span> <span class="n">url</span><span class="o">=</span><span class="n">reverse</span><span class="p">(</span><span class="s">'admin:polls_poll_change'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">poll_id</span><span class="p">]))</span>
+    <span class="n">menu</span><span class="o">.</span><span class="n">add_sideframe_item</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">'Show History of this Poll'</span><span class="p">),</span> <span class="n">url</span><span class="o">=</span><span class="n">reverse</span><span class="p">(</span><span class="s">'admin:polls_poll_history'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">poll_id</span><span class="p">]))</span>
+    <span class="n">menu</span><span class="o">.</span><span class="n">add_sideframe_item</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">'Delete this Poll'</span><span class="p">),</span> <span class="n">url</span><span class="o">=</span><span class="n">reverse</span><span class="p">(</span><span class="s">'admin:polls_poll_delete'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">poll_id</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'polls/detail.html'</span><span class="p">,</span> <span class="p">{</span><span class="s">'poll'</span><span class="p">:</span> <span class="n">poll</span><span class="p">})</span>
+</pre></div>
+
+<p>step-5: extending the page model</p>
+
+<h1>
+<a name="djangocms-tutorial---step-5" class="anchor" href="#djangocms-tutorial---step-5"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 5</h1>
+
+<h2>
+<a name="extending-the-page-model" class="anchor" href="#extending-the-page-model"><span class="octicon octicon-link"></span></a>Extending the page model</h2>
+
+<p>Create a new python module in your project root - let's call it <code>pagetags</code>. Add all the files below:</p>
+
+<pre><code>pagetags/
+    __init.py__
+    admin.py
+    cms_toolbar.py
+    models.py
+</code></pre>
+
+<h3>
+<a name="the-model-1" class="anchor" href="#the-model-1"><span class="octicon octicon-link"></span></a>The Model</h3>
+
+<p>At first, we're gonna set up the model. To do so, open up <code>models.py</code>, create a class extending <code>cms.extensions.PageExtension</code> and make a <code>tags</code> field of the type <code>taggit.managers.TaggableManager</code>. Afterwards, register the class in the <code>cms.extensions.extension_pool</code>. It should look something like this:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.extensions</span> <span class="kn">import</span> <span class="n">PageExtension</span><span class="p">,</span> <span class="n">extension_pool</span>
+<span class="kn">from</span> <span class="nn">taggit.managers</span> <span class="kn">import</span> <span class="n">TaggableManager</span>
+
+
+<span class="k">class</span> <span class="nc">PageTag</span><span class="p">(</span><span class="n">PageExtension</span><span class="p">):</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">TaggableManager</span><span class="p">()</span>
+
+<span class="n">extension_pool</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PageTag</span><span class="p">)</span>
+</pre></div>
+
+<h3>
+<a name="the-admin" class="anchor" href="#the-admin"><span class="octicon octicon-link"></span></a>The Admin</h3>
+
+<p>Let's make a very simple admin class in the <code>admin.py</code>.</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.extensions</span> <span class="kn">import</span> <span class="n">PageExtensionAdmin</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">PageTag</span>
+
+
+<span class="k">class</span> <span class="nc">PageTagAdmin</span><span class="p">(</span><span class="n">PageExtensionAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s">'extended_object'</span><span class="p">)</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PageTag</span><span class="p">,</span> <span class="n">PageTagAdmin</span><span class="p">)</span>
+</pre></div>
+
+<p>Oh wait, let's add a method to the <code>PageTagAdmin</code> class, so we can see whether the tags where added to a draft page or not:</p>
+
+<div class="highlight highlight-python"><pre>    <span class="k">def</span> <span class="nf">is_draft_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">extended_object</span><span class="o">.</span><span class="n">publisher_is_draft</span>
+</pre></div>
+
+<h3>
+<a name="the-toolbar" class="anchor" href="#the-toolbar"><span class="octicon octicon-link"></span></a>The Toolbar</h3>
+
+<p>Let's get to the fun part: Putting it all together and adding it to the toolbar!</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span><span class="p">,</span> <span class="n">NoReverseMatch</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="kn">from</span> <span class="nn">cms.api</span> <span class="kn">import</span> <span class="n">get_page_draft</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_pool</span> <span class="kn">import</span> <span class="n">toolbar_pool</span>
+<span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">PageTag</span>
+
+
+<span class="nd">@toolbar_pool.register</span>
+<span class="k">class</span> <span class="nc">PageTagsToolbar</span><span class="p">(</span><span class="n">CMSToolbar</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">populate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># always use draft if we have a page</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="n">get_page_draft</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">current_page</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="p">:</span>
+            <span class="c"># Nothing to do</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">page_tag</span> <span class="o">=</span> <span class="n">PageTag</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">extended_object_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">PageTag</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="n">page_tag</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">page_tag</span><span class="p">:</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:pagetags_pagetag_change'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">page_tag</span>
+                                                                 <span class="o">.</span><span class="n">pk</span><span class="p">,))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:pagetags_pagetag_add'</span><span class="p">)</span><span class="o">+</span><span class="s">'?extended_object'</span> \
+                                                            <span class="s">'=</span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">pk</span>
+        <span class="k">except</span> <span class="n">NoReverseMatch</span><span class="p">:</span>
+            <span class="c"># not in urls</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">not_edit_mode</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">edit_mode</span>
+            <span class="n">current_page_menu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">get_or_create_menu</span><span class="p">(</span><span class="s">'page'</span><span class="p">)</span>
+            <span class="n">current_page_menu</span><span class="o">.</span><span class="n">add_modal_item</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">'Tags'</span><span class="p">),</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+                                             <span class="n">disabled</span><span class="o">=</span><span class="n">not_edit_mode</span><span class="p">)</span>
+</pre></div>
+
+<p>What we did here is # TODO: this.</p>
+
+<h1>
+<a name="djangocms-tutorial---step-6" class="anchor" href="#djangocms-tutorial---step-6"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 6</h1>
+
+<h2>
+<a name="stacks-displaying-the-same-content-on-multiple-locations" class="anchor" href="#stacks-displaying-the-same-content-on-multiple-locations"><span class="octicon octicon-link"></span></a>Stacks: displaying the same content on multiple locations</h2>
+
+<p>If you need to display the same content on multiple locations you can use stacks.</p>
+
+<p>Stacks have a name and a placeholder attached to them. There are 3 ways to use stacks.</p>
+
+<h3>
+<a name="1-stack-template-tags" class="anchor" href="#1-stack-template-tags"><span class="octicon octicon-link"></span></a>1. Stack Template Tags</h3>
+
+<p>You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:
+    * Footer
+    * Logo
+    * Header
+    * Text or content inside you app
+    * Text or content inside of 3th party apps.</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlight highlight-python"><pre><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">stack_tags</span> <span class="o">%</span><span class="p">}</span> <span class="p">{</span><span class="o">%</span> <span class="n">stack</span> <span class="err">“</span><span class="n">footer</span><span class="err">”</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+
+<p><strong><em>Note:</em></strong> It is recommended to use stacks in your apphook apps instead of show_placeholder templatetags</p>
+
+<h3>
+<a name="2-stack-plugins" class="anchor" href="#2-stack-plugins"><span class="octicon octicon-link"></span></a>2. Stack Plugins</h3>
+
+<p>You can create a stack out of plugins. You can create stacks out of plugin trees. After you created a stack this way you can insert a stack plugin and select a stack to be displayed instead of the stack plugin.</p>
+
+<h3>
+<a name="3-stacks-as-templates" class="anchor" href="#3-stacks-as-templates"><span class="octicon octicon-link"></span></a>3. Stacks as templates</h3>
+
+<p>If you create stacks out of plugin tree you can paste the plugins contained in a stack as template. For example you can create a teaser plugin tree out of a multicolumn, text and picture plugin. You can then paste this template at the appropriate place and just edit the plugins instead of creating the same structure over and over.</p>
+
+<p>`# TODO: improve</p>
       </section>
 
     </div>
