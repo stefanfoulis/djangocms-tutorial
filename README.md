@@ -42,7 +42,8 @@ Now go to the admin panel at [localhost:8000/admin](http://localhost:8000/admin)
 * Go to _Cms_ > _Pages_ and add a new page
 * Go to the advanced settings of the page we just created
 * Under _Application_, select the 'Blog' application and give it a namespace (e.g. `myblog`)
-* restart the server (`CTRL+C` and `python manage.py runserver` again)
+* Save and publish the page
+* Restart the server (`CTRL+C` and `python manage.py runserver` again)
 * Now go to _Aldryn Blog_ and add a new post
 * Voila :)
 
