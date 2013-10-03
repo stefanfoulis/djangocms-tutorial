@@ -1,8 +1,7 @@
 Solution Step 1
 ===========================
-This is the solution to step 1. If you messed up or want to continue with a clean solution, extract the contents of demo.zip to your project folder.
+This is the solution to step 1. If you messed up or want to continue with a clean solution, copy the contents of this folder to your project folder and do
 
-```
-cd ~/workspace
-tar -xvf djangocms-tutorial/solution/demo.zip -C demo/ 
-```
+* setup venv
+* syncdb / migrate all 
+* more?
