@@ -4,7 +4,7 @@ South==0.8.2
 -e git+https://github.com/nephila/aldryn-installer@aab1af03b3b26fe6869a1d122fc4f44321dbef22#egg=aldryn_installer-master
 dj-database-url==0.2.2
 django-classy-tags==0.4
-django-cms==3.0.0.beta2
+git+git://github.com/divio/django-cms.git#egg=django-cms
 django-mptt==0.5.2
 django-reversion==1.7.1
 django-sekizai==0.7
