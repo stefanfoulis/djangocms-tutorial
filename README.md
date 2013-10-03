@@ -24,7 +24,7 @@ This classes must implement a populate function. The populate function will only
 
 A simple example, registering a class that does nothing:
 
-```
+```python
 from cms.toolbar_pool import toolbar_pool
 from cms.toolbar_base import CMSToolbar
 
@@ -46,7 +46,7 @@ When adding items, all arguments other than the name or identifier should be giv
 
 Following our Extending the CMS: Examples, let’s add the poll app to the toolbar:
 
-```
+```python
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from cms.toolbar_pool import toolbar_pool
@@ -64,7 +64,7 @@ class PollToolbar(CMSToolbar):
 
 However, there’s already a menu added by the CMS which provides access to various admin views, so you might want to add your menu as a sub menu there. To do this, you can use positional insertion coupled with the fact that `cms.toolbar.toolbar.CMSToolbar.get_or_create_menu()` will return already existing menus:
 
-```
+```python
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from cms.toolbar_pool import toolbar_pool
@@ -87,7 +87,7 @@ class PollToolbar(CMSToolbar):
 ### Adding items through views
 Another way to add items to the toolbar is through our own views (`polls/views.py`). This method can be useful if you need to access certain variables, in our case e.g. the selected poll and its sub-methods:
 
-```
+```python
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import ugettext_lazy as _
