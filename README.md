@@ -253,18 +253,5 @@ class PollsApp(CMSApp):
 apphook_pool.register(PollsApp)
 ```
 
-#####################################################################################
-#####################################################################################
-###################################################################################
-wo ane mit dem
 
-
-
-
-bla bla
-
-* extend page model
-* menubar integration
-* more?
-
-..
+Phew, quite some work done. If you're still on fire, check out branch [`step-4`](https://github.com/Chive/djangocms-tutorial/tree/step-4)!
