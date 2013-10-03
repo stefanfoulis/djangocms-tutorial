@@ -249,6 +249,7 @@ class PollsApp(CMSApp):
     name = _("Poll App")
     urls = ["polls.urls"]
     menus = [PollsMenu] # attach a CMSAttachMenu to this apphook.
+    app_name = 'polls'
 
 apphook_pool.register(PollsApp)
 ```
