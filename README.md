@@ -57,17 +57,20 @@ The aldryn installer did most of the work for us, however we need to add our cus
 **`base.html`**:
 
 ```html
-{% load cms_tags sekizai_tags %}
+{% load cms_tags sekizai_tags menu_tags %}
 <html>
-  <head>
-      {% render_block "css" %}
-  </head>
-  <body>
-      {% cms_toolbar %}
-      {% placeholder base_content %}
-      {% block base_content %}{% endblock %}
-      {% render_block "js" %}
-  </body>
+	<head>
+		{% render_block "css" %}
+	</head>
+	<body>
+		{% cms_toolbar %}
+		<ul>
+			{% show_menu 0 100 100 100 %}
+		</ul>
+		{% placeholder base_content %}
+		{% block base_content %}{% endblock %}
+		{% render_block "js" %}
+	</body>
 </html>
 ```
 
@@ -78,7 +81,7 @@ The aldryn installer did most of the work for us, however we need to add our cus
 {% load cms_tags %}
 
 {% block base_content %}
-  {% placeholder content %}
+    {% placeholder content %}
 {% endblock %}
 ```
 
