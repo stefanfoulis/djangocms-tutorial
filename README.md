@@ -34,12 +34,6 @@ $ python manage.py migrate
 
 and it's done.
 
-Finally, we need to copy a html template for our blog to our project:
-
-```bash
-$ cp ../djangocms-tutorial/sources/base.html my_demo/templates/
-```
-
 We can now run our server again
 
 ```bash
