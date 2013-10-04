@@ -17,7 +17,7 @@ You can use a template tag to display a placeholder in a template without the ne
 **Example:**
 	
 ```python
-{% load stack_tags %} {% stack “footer” %}
+{% load stack_tags %} {% stack "footer" %}
 ```
 	
 ***Note:*** It is recommended to use stacks in your apphook apps instead of show_placeholder templatetags
