@@ -46,7 +46,7 @@ Now go to the admin panel at [localhost:8000/admin](http://localhost:8000/admin)
 * Under _Application_, select the 'Blog' application and give it a namespace (e.g. `myblog`)
 * Save and publish the page
 * Restart the server (`CTRL+C` and `python manage.py runserver` again)
-* Now go to _Aldryn Blog_ and add a new post
+* Back to your browser, refresh and select Blog from the toolbar. Now go on and add a new Blog post!
 * Voila :)
 
 Quick, check out [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)!
