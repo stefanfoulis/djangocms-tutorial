@@ -51,8 +51,36 @@ If you want to be safe, use the settings below:
 § Password: admin
 ```
 
-### add a custom template
-The aldryn installer did most of the work for us, however we need to add our custom template to the CMS. Copy both `base.html` and `page.html` from `djangocms-tutorial/sources/my_demo/templates/` to `demo/my_demo/templates/`.
+### Create a template
+The aldryn installer did most of the work for us, however we need to add our custom template to the CMS. Make two new files in `demo/my_demo/templates/`:
+
+**`base.html`**:
+
+```html
+{% load cms_tags sekizai_tags %}
+<html>
+  <head>
+      {% render_block "css" %}
+  </head>
+  <body>
+      {% cms_toolbar %}
+      {% placeholder base_content %}
+      {% block base_content %}{% endblock %}
+      {% render_block "js" %}
+  </body>
+</html>
+```
+
+**`page.html`**:
+
+```html
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block base_content %}
+  {% placeholder content %}
+{% endblock %}
+```
 
 Next, open up `my_demo/settings.py`, look for `CMS_TEMPLATES` and change it to this:
 
