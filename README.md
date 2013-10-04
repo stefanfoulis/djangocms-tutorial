@@ -8,11 +8,12 @@ Stacks have a name and a placeholder attached to them. There are 3 ways to use s
 
 ### 1. Stack Template Tags	
 You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:
-	* Footer
-	* Logo
-	* Header
-	* Text or content inside you app
-	* Text or content inside of 3th party apps.
+
+* Footer
+* Logo
+* Header
+* Text or content inside you app
+* Text or content inside of 3th party apps.
 	
 **Example:**
 	
