@@ -5,7 +5,9 @@ In this part of the tutorial we're going to take a django app and modify it like
 You can either complete the tutorial here <https://docs.djangoproject.com/en/dev/intro/tutorial01/> or copy the folder `polls` from `djangocms-tutorial/sources/` to your project root.
 
 ```bash
-~/workspace/demo $ cp -r ../djangocms-tutorial/sources/polls .
+$ cd workspace/djangocms-tutorial
+$ git checkout step-3
+$ cp -r sources/polls ../demo/
 ```
 
 You should end up with this folder structure:
@@ -13,7 +15,7 @@ You should end up with this folder structure:
 ```
 workspace
 	djangocms-tutorial/
-	my_demo/
+	demo/
 		env/
 		manage.py
 		my_demo/
