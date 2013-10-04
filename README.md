@@ -52,7 +52,9 @@ If you want to be safe, use the settings below:
 ```
 
 ### Create a template
-The aldryn installer did most of the work for us, however we need to add our custom template to the CMS. Make two new files in `demo/my_demo/templates/`:
+The aldryn installer did most of the work for us, however we need to add our custom template to the CMS.
+
+First, delete the two files in `demo/my_demo/templates/`. Afterwards, create these two files in that folder:
 
 **`base.html`**:
 
