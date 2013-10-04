@@ -1,0 +1,11 @@
+<html>
+  <head>
+      {% render_block "css" %}
+  </head>
+  <body>
+      {% cms_toolbar %}
+      {% placeholder base_content %}
+      {% block base_content %}{% endblock %}
+      {% render_block "js" %}
+  </body>
+</html>
