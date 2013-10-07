@@ -5,7 +5,7 @@ In this part of the tutorial we're going to take a django app and modify it like
 You can either complete the tutorial here <https://docs.djangoproject.com/en/dev/intro/tutorial01/> or copy the folder `polls` from `djangocms-tutorial/sources/` to your project root.
 
 ```bash
-$ cd workspace/djangocms-tutorial
+$ cd ~/workspace/djangocms-tutorial
 $ git checkout step-3
 $ cp -r sources/polls ../demo/
 ```
@@ -136,8 +136,8 @@ urlpatterns = i18n_patterns('',
 Now to create the database tables for this model (using South):
 
 ```bash
-$ python manage.py schemamigration polls --initial
-$ python manage.py migrate polls
+(env) $ python manage.py schemamigration polls --initial
+(env) $ python manage.py migrate polls
 ```
 
 Finally, run the server and go visit <http://localhost:8000/polls/>. Yay!
