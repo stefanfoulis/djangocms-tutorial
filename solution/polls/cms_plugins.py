@@ -13,4 +13,4 @@ class PollPlugin(CMSPluginBase):
         context.update({'instance': instance})
         return context
 
-plugin_pool.register_plugin(PollPlugin)  # register the plugin
+plugin_pool.register_plugin(PollPlugin) # register the plugin
