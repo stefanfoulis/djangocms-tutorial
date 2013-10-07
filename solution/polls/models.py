@@ -1,4 +1,3 @@
-from cms.extensions import PageExtension
 from django.db import models
 import datetime
 from django.utils import timezone
@@ -34,4 +33,4 @@ class PollPlugin(CMSPlugin):
     poll = models.ForeignKey('polls.Poll', related_name='plugins')
 
     def __unicode__(self):
-        return self.poll.question
+      return self.poll.question

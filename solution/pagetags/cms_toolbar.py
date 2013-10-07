@@ -23,11 +23,12 @@ class PageTagsToolbar(CMSToolbar):
             page_tag = None
         try:
             if page_tag:
-                url = reverse('admin:pagetags_pagetag_change', args=(page_tag
-                                                                 .pk,))
+                url = reverse('admin:pagetags_pagetag_change',
+                              args=(page_tag.pk,))
             else:
-                url = reverse('admin:pagetags_pagetag_add')+'?extended_object' \
-                                                            '=%s' % self.page.pk
+                url = reverse(
+                    'admin:pagetags_pagetag_add')\
+                      +'?extended_object=%s' % self.page.pk
         except NoReverseMatch:
             # not in urls
             pass

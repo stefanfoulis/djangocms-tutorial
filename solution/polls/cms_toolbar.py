@@ -5,6 +5,7 @@ from cms.toolbar.items import Break
 from cms.cms_toolbar import ADMIN_MENU_IDENTIFIER, ADMINISTRATION_BREAK
 from cms.toolbar_base import CMSToolbar
 
+
 @toolbar_pool.register
 class PollToolbar(CMSToolbar):
 
@@ -15,4 +16,3 @@ class PollToolbar(CMSToolbar):
         url = reverse('admin:polls_poll_changelist')
         menu.add_sideframe_item(_('Poll overview'), url=url)
         admin_menu.add_break('poll-break', position=menu)
-
