@@ -1,17 +1,21 @@
 djangoCMS Tutorial - Step 1
 ===========================
-Hey, you made it! Awesome. Now let's get started by setting up our environment.
+Hey, you made it! Great. Now let's get started by setting up our environment.
 
 Preparing your workstation
 --------------------------
+In order to keep an overview about view packages are installed, we create a virtual environment for every project. Make sure you have the latest version installed:
 
 ```bash
 $ pip install --upgrade virtualenv
 ```
+
 Installing the CMS
 ------------------
 
 ### Make a project folder
+
+Go back to your workspace and create a new folder for this project:
 
 ```bash
 $ cd ~/workspace	
@@ -20,14 +24,17 @@ $ mkdir demo && cd demo
 
 ### Setup virtual environment
 
+Let's set up the virtual environment and install `aldryn-installer`:
+
 ```bash
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
 $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 
-### install djangoCMS
-follow the interactive setup, don't worry if takes a while :)
+### Install djangoCMS
+
+We're now about to install djangoCMS. We'll do that using previously installed `aldryn-installer` since it's easy and hassle-free. Just follow the interactive setup, don't worry if takes a while :)
 
 ```bash
 $ aldryn -p . my_demo
@@ -52,9 +59,7 @@ If you want to be safe, use the settings below:
 ```
 
 ### Create a template
-The aldryn installer did most of the work for us, however we need to add our custom template to the CMS.
-
-First, delete the two files in `demo/my_demo/templates/`. Afterwards, create these two files in that folder:
+The installer did most of the work for us, however we need to add our custom templates to the CMS. First, delete the two existing files in `demo/my_demo/templates/`. Afterwards, create these two files in that folder:
 
 **`base.html`**:
 
@@ -86,19 +91,20 @@ First, delete the two files in `demo/my_demo/templates/`. Afterwards, create the
 {% endblock %}
 ```
 
-Next, open up `my_demo/settings.py`, look for `CMS_TEMPLATES` and change it to this:
+Next, open up `my_demo/settings.py`, look for `CMS_TEMPLATES` and change include our newly created `page.html` template:
 
-```python
+```html
 CMS_TEMPLATES = (
     ('page.html', 'Page'),
 )
 ```
 
-### let's run it
+### Let's run it
+
+Start the server:
+
 ```bash
 $ python manage.py runserver
 ```
 
-### Where to go from here
-
-Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) (You should know how that works by now :)
+Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
