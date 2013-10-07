@@ -79,6 +79,7 @@ First, delete the two files in `demo/my_demo/templates/`. Afterwards, create the
 
 ```html
 {% extends "base.html" %}
+{% load cms_tags sekizai_tags menu_tags placeholder_tags %}
 
 {% block content %}
     {% placeholder content %}
