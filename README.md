@@ -198,14 +198,18 @@ Now you might have noticed that the menu tree stops at the CMS Page you created 
 
 For this we need a file called `menu.py`. Create it and ensure your polls app looks like this:
 
-````
+```
 polls/
+	migrations/
+	templates/
     __init__.py
+    admin.py
     cms_app.py
     cms_plugins.py
     menu.py
     models.py
     tests.py
+    urls.py
     views.py
 ```
 
@@ -213,14 +217,15 @@ In your `menu.py` write:
 
 ```python
 from cms.menu_bases import CMSAttachMenu
-from menus.base import Menu, NavigationNode
+from menus.base import NavigationNode
 from menus.menu_pool import menu_pool
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from polls.models import Poll
 
+
 class PollsMenu(CMSAttachMenu):
-    name = _("Polls Menu") # give the menu a name, this is required.
+    name = _("Polls Menu")  # give the menu a name, this is required.
 
     def get_nodes(self, request):
         """
@@ -239,12 +244,13 @@ class PollsMenu(CMSAttachMenu):
             )
             nodes.append(node)
         return nodes
-menu_pool.register_menu(PollsMenu) # register the menu.
+
+menu_pool.register_menu(PollsMenu)  # register the menu.
 ```
 
 At this point this menu alone doesn’t do a whole lot. We have to attach it to the Apphook first.
 
-So open your `cms_apps.py` and write:
+So open your `cms_apps.py` and in your PollsApp class add a pointer to the menu class:
 
 ```python
 from cms.app_base import CMSApp
@@ -252,10 +258,11 @@ from cms.apphook_pool import apphook_pool
 from polls.menu import PollsMenu
 from django.utils.translation import ugettext_lazy as _
 
+
 class PollsApp(CMSApp):
     name = _("Poll App")
     urls = ["polls.urls"]
-    menus = [PollsMenu] # attach a CMSAttachMenu to this apphook.
+    menus = [PollsMenu]  # attach a CMSAttachMenu to this apphook.
     app_name = 'polls'
 
 apphook_pool.register(PollsApp)
