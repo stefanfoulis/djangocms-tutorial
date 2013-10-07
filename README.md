@@ -42,13 +42,28 @@ You can create a stack out of plugins. You can create stacks out of plugin trees
 
 If you create stacks out of plugin tree you can paste the plugins contained in a stack as template. For example you can create a teaser plugin tree out of a multicolumn, text and picture plugin. You can then paste this template at the appropriate place and just edit the plugins instead of creating the same structure over and over.
 
+### Let's create a footer!
+
 But that's theory, let's implement a footer!
 
-Open up our base template `my_demo/templates/base.html` and add the following to it:
+Since we want our footer on every single page, we should add it to our base template (`my_demo/templates/base.html`). So open it up and add `stack_tags` to the `load` tag at the top and add a new `stack` (e.g. `my_footer`) at the bottom of the html body. In the end it should look something like this:
 
 ```html
-{% load stack_tags %}
-{% stack "my_footer" %}
+{% load cms_tags sekizai_tags menu_tags placeholder_tags stack_tags %}
+<html>
+    <head>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        <ul>
+            {% show_menu 0 100 100 100 %}
+        </ul>
+        {% block content %}{% endblock %}
+		{% stack "my_footer" %}
+        {% render_block "js" %}
+    </body>
+</html>
 ```
 
-`#TODO Save, make sure right template selected and view on site
+Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!
