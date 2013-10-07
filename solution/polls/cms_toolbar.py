@@ -5,6 +5,7 @@ from cms.toolbar.items import Break
 from cms.cms_toolbar import ADMIN_MENU_IDENTIFIER, ADMINISTRATION_BREAK
 from cms.toolbar_base import CMSToolbar
 
+
 @toolbar_pool.register
 class PollToolbar(CMSToolbar):
 
