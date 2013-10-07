@@ -22,7 +22,7 @@ These have four attributes:
 
 This classes must implement a populate function. The populate function will only be called if the current user is a staff user.
 
-A simple example, registering a class that does nothing:
+A simple example, registering a class that does nothing (`cms_toolbar.py`):
 
 ```python
 from cms.toolbar_pool import toolbar_pool
@@ -44,13 +44,14 @@ Then, to add a link to your changelist that will open in the sideframe, use the 
 
 When adding items, all arguments other than the name or identifier should be given as keyword arguments. This will help ensure that your custom toolbar items survive upgrades.
 
-Following our Extending the CMS: Examples, let’s add the poll app to the toolbar:
+Following our Extending the CMS: Examples, let’s add the poll app to the toolbar (`cms_toolbar.py`):
 
 ```python
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from cms.toolbar_pool import toolbar_pool
 from cms.toolbar_base import CMSToolbar
+
 
 @toolbar_pool.register
 class PollToolbar(CMSToolbar):
@@ -71,6 +72,7 @@ from cms.toolbar_pool import toolbar_pool
 from cms.toolbar.items import Break
 from cms.cms_toolbar import ADMIN_MENU_IDENTIFIER, ADMINISTRATION_BREAK
 from cms.toolbar_base import CMSToolbar
+
 
 @toolbar_pool.register
 class PollToolbar(CMSToolbar):
@@ -107,5 +109,4 @@ def detail(request, poll_id):
     return render(request, 'polls/detail.html', {'poll': poll})
 ```
 
-step-5: extending the page model
-
+Now, run the server again, go to the page where you hooked the Polls App to and select `Page` > `Polls` in the toolbar! Next up: [`step-5`](https://github.com/Chive/djangocms-tutorial/tree/step-5) - extending the page model
