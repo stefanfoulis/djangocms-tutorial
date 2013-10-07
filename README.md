@@ -1,17 +1,17 @@
 djangoCMS Tutorial
 ==================
 
-Prerequisites / Requirements
-----------------------------
-* python
-* git
+Before we start
+---------------
+Please make sure you have the following programs installed:
+
+* Python
 * pip
-* ..more?
+* git
 
 Start
 -----
-In order to start, you first need to clone this repository. Open a shell,
-cd into your workspace and git clone the tutorial
+Open a terminal, go to your workspace and clone this repository using git.
 
 ```bash
 cd ~/workspace
