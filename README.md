@@ -37,7 +37,7 @@ from .models import PageTag
 
 
 class PageTagAdmin(PageExtensionAdmin):
-    list_display = ('extended_object')
+    list_display = ['extended_object']
 
 admin.site.register(PageTag, PageTagAdmin)
 ```
@@ -78,11 +78,12 @@ class PageTagsToolbar(CMSToolbar):
             page_tag = None
         try:
             if page_tag:
-                url = reverse('admin:pagetags_pagetag_change', args=(page_tag
-                                                                 .pk,))
+                url = reverse('admin:pagetags_pagetag_change',
+                              args=(page_tag.pk,))
             else:
-                url = reverse('admin:pagetags_pagetag_add')+'?extended_object' \
-                                                            '=%s' % self.page.pk
+                url = reverse(
+                    'admin:pagetags_pagetag_add')\
+                      +'?extended_object=%s' % self.page.pk
         except NoReverseMatch:
             # not in urls
             pass
@@ -93,4 +94,6 @@ class PageTagsToolbar(CMSToolbar):
                                              disabled=not_edit_mode)
 ```
 
-What we did here is # TODO: this.
+Congrats, we're finished with the app - let's add it to our project. Open up `my_demo/settings.py` and add `pagetags` to your `INSTALLED_APPS`. Afterwards, update your database using `python manage.py syncdb` and start the server again.
+
+You can now change a page's tags through the toolbar directly in the front end! (`Page` > `Tags ...`) 
