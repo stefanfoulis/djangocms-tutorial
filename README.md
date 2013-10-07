@@ -29,7 +29,7 @@ Let's set up the virtual environment and install `aldryn-installer`:
 ```bash
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
-$ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
+(env) $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 
 ### Install djangoCMS
@@ -37,7 +37,7 @@ $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-inst
 We're now about to install djangoCMS. We'll do that using previously installed `aldryn-installer` since it's easy and hassle-free. Just follow the interactive setup, don't worry if takes a while :)
 
 ```bash
-$ aldryn -p . my_demo
+(env) $ aldryn -p . my_demo
 ```
 
 If you want to be safe, use the settings below:
@@ -104,7 +104,7 @@ CMS_TEMPLATES = (
 Start the server:
 
 ```bash
-$ python manage.py runserver
+(env) $ python manage.py runserver
 ```
 
 Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
