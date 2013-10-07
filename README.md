@@ -152,11 +152,15 @@ CMS Apps live in a file called `cms_app.py`, so go ahead and create it to make y
 
 ```
 polls/
+	migrations/
+	templates/
     __init__.py
+    admin.py
     cms_app.py
     cms_plugins.py
     models.py
     tests.py
+    urls.py
     views.py
 ```
 
@@ -167,9 +171,10 @@ from cms.app_base import CMSApp
 from cms.apphook_pool import apphook_pool
 from django.utils.translation import ugettext_lazy as _
 
+
 class PollsApp(CMSApp):
-    name = _("Poll App") # give your app a name, this is required
-    urls = ["polls.urls"] # link your app to url configuration(s)
+    name = _("Poll App")  # give your app a name, this is required
+    urls = ["polls.urls"]  # link your app to url configuration(s)
 
 apphook_pool.register(PollsApp) # register your app
 ```
