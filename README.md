@@ -1,5 +1,5 @@
-djangoCMS Tutorial
-==================
+django CMS Tutorial
+===================
 
 Before we start
 ---------------
