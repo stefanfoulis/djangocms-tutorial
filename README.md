@@ -1,5 +1,5 @@
-djangoCMS Tutorial - Step 5
-===========================
+django CMS Tutorial - Step 5
+============================
 Extending the page model
 ------------------------
 Create a new python module in your project root - let's call it `pagetags`. Add all the files below:
