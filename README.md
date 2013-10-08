@@ -1,5 +1,5 @@
-djangoCMS Tutorial - Step 6
-===========================
+django CMS Tutorial - Step 6
+============================
 During this tutorial or your experience with django itself you've probably seen the placeholders before:
 
 ```html
