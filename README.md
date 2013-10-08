@@ -1,5 +1,5 @@
-djangoCMS Tutorial - Step 1
-===========================
+django CMS Tutorial - Step 1
+============================
 Hey, you made it! Great. Now let's get started by setting up our environment.
 
 Preparing your workstation
