@@ -29,7 +29,7 @@ Let's set up the virtual environment and install `aldryn-installer`:
 ```bash
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
-(env) $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
+(env) $ pip install git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 
 ### Install djangoCMS
