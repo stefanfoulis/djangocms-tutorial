@@ -1,5 +1,5 @@
-djangoCMS Tutorial - Step 2
-===========================
+django CMS Tutorial - Step 2
+============================
 Still with us? Great! So far we set up our environment by installing django, djangoCMS and all necessary dependencies. We also configured djangoCMS and ran it for the first time.
 
 Next up, we want to extend djangoCMS by installing an app. We're gonna be using the aldryn_blog module for this example. Let's get going!
