@@ -1,5 +1,5 @@
-djangoCMS Tutorial - Step 4
-===========================
+django CMS Tutorial - Step 4
+============================
 Extending the Toolbar
 ---------------------
 In the new version 3.0 you can add and remove items to the toolbar. This allows you to integrate your application in the frontend editing mode of django CMS and provide your users with a streamlined editing experience.
