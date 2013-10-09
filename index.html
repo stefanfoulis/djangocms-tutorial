@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Djangocms-tutorial by Chive</title>
+    <title>django CMS Tutorial by Chive</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -31,29 +31,29 @@
 
       <section>
         <div id="title">
-          <h1>Djangocms-tutorial</h1>
-          <p>djangoCMS Tutorial for PyCon.DE [WIP]</p>
+          <h1>django CMS Tutorial</h1>
+          <p>django CMS Tutorial for PyCon.DE [WIP]</p>
           <hr>
           <span class="credits left">Project maintained by <a href="https://github.com/Chive">Chive</a></span>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
 
         <h1>
-<a name="djangocms-tutorial" class="anchor" href="#djangocms-tutorial"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial</h1>
+<a name="django-cms-tutorial" class="anchor" href="#django-cms-tutorial"><span class="octicon octicon-link"></span></a>django CMS Tutorial</h1>
 
 <h2>
-<a name="prerequisites--requirements" class="anchor" href="#prerequisites--requirements"><span class="octicon octicon-link"></span></a>Prerequisites / Requirements</h2>
+<a name="before-we-start" class="anchor" href="#before-we-start"><span class="octicon octicon-link"></span></a>Before we start</h2>
+
+<p>Please make sure you have the following programs installed:</p>
 
 <ul>
-<li>python</li>
-<li>git</li>
+<li>Python</li>
 <li>pip</li>
-<li>..more?</li>
+<li>git</li>
 </ul><h2>
 <a name="start" class="anchor" href="#start"><span class="octicon octicon-link"></span></a>Start</h2>
 
-<p>In order to start, you first need to clone this repository. Open a shell,
-cd into your workspace and git clone the tutorial</p>
+<p>Open a terminal, go to your workspace and clone this repository using git.</p>
 
 <div class="highlight highlight-bash"><pre><span class="nb">cd</span> ~/workspace
 git clone git@github.com:Chive/djangocms-tutorial.git
@@ -66,12 +66,14 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 </pre></div>
 
 <h1>
-<a name="djangocms-tutorial---step-1" class="anchor" href="#djangocms-tutorial---step-1"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 1</h1>
+<a name="django-cms-tutorial---step-1" class="anchor" href="#django-cms-tutorial---step-1"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 1</h1>
 
-<p>Hey, you made it! Awesome. Now let's get started by setting up our environment.</p>
+<p>Hey, you made it! Great. Now let's get started by setting up our environment.</p>
 
 <h2>
 <a name="preparing-your-workstation" class="anchor" href="#preparing-your-workstation"><span class="octicon octicon-link"></span></a>Preparing your workstation</h2>
+
+<p>In order to keep an overview about view packages are installed, we create a virtual environment for every project. Make sure you have the latest version installed:</p>
 
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span>pip install --upgrade virtualenv
 </pre></div>
@@ -82,6 +84,8 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <h3>
 <a name="make-a-project-folder" class="anchor" href="#make-a-project-folder"><span class="octicon octicon-link"></span></a>Make a project folder</h3>
 
+<p>Go back to your workspace and create a new folder for this project:</p>
+
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/workspace    
 <span class="nv">$ </span>mkdir demo <span class="o">&amp;&amp;</span> <span class="nb">cd </span>demo
 </pre></div>
@@ -89,58 +93,99 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <h3>
 <a name="setup-virtual-environment" class="anchor" href="#setup-virtual-environment"><span class="octicon octicon-link"></span></a>Setup virtual environment</h3>
 
+<p>Let's set up the virtual environment and install <code>aldryn-installer</code>:</p>
+
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span>virtualenv env --no-site-packages
 <span class="nv">$ </span><span class="nb">source </span>env/bin/activate
-<span class="nv">$ </span>pip install -e git+https://github.com/nephila/aldryn-installer#egg<span class="o">=</span>aldryn-installer
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>pip install git+https://github.com/nephila/aldryn-installer#egg<span class="o">=</span>aldryn-installer
 </pre></div>
 
 <h3>
-<a name="install-djangocms" class="anchor" href="#install-djangocms"><span class="octicon octicon-link"></span></a>install djangoCMS</h3>
+<a name="install-djangocms" class="anchor" href="#install-djangocms"><span class="octicon octicon-link"></span></a>Install djangoCMS</h3>
 
-<p>follow the interactive setup, don't worry if takes a while :)</p>
+<p>We're now about to install djangoCMS. We'll do that using previously installed <code>aldryn-installer</code> since it's easy and hassle-free. Just follow the interactive setup, don't worry if takes a while :)</p>
 
-<div class="highlight highlight-bash"><pre><span class="nv">$ </span>aldryn -p . my_demo
+<div class="highlight highlight-bash"><pre><span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>aldryn -p . my_demo
 </pre></div>
 
 <p>If you want to be safe, use the settings below:</p>
 
-<div class="highlight highlight-bash"><pre>§ Database configuration <span class="o">(</span>in URL format<span class="o">)</span> <span class="o">[</span>default sqlite://locahost/project.db<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
-§ django CMS version <span class="o">(</span>choices: 2.4, stable, beta, develop<span class="o">)</span> <span class="o">[</span>default stable<span class="o">]</span>: develop
-§ Django version <span class="o">(</span>choices: 1.4, 1.5, stable<span class="o">)</span> <span class="o">[</span>default stable<span class="o">]</span>: 1.5
-§ Activate Django I18N / L10N setting <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
-§ Install and configure reversion support <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
-§ Languages to enable. Option can be provided multiple <span class="nb">times</span>, or as a comma separated list: en,de
-§ Optional default timezone <span class="o">[</span>default America/Chicago<span class="o">]</span>: Europe/Zurich
-§ Activate Django timezone support <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
-§ Activate CMS permission management <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>Database configuration <span class="o">(</span>in URL format<span class="o">)</span> <span class="o">[</span>default sqlite://locahost/project.db<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+<span class="nv">$ </span>django CMS version <span class="o">(</span>choices: 2.4, stable, beta, develop<span class="o">)</span> <span class="o">[</span>default stable<span class="o">]</span>: develop
+<span class="nv">$ </span>Django version <span class="o">(</span>choices: 1.4, 1.5, stable<span class="o">)</span> <span class="o">[</span>default stable<span class="o">]</span>: 1.5
+<span class="nv">$ </span>Activate Django I18N / L10N setting <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+<span class="nv">$ </span>Install and configure reversion support <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+<span class="nv">$ </span>Languages to enable. Option can be provided multiple <span class="nb">times</span>, or as a comma separated list: en,de
+<span class="nv">$ </span>Optional default timezone <span class="o">[</span>default America/Chicago<span class="o">]</span>: Europe/Zurich
+<span class="nv">$ </span>Activate Django timezone support <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
+<span class="nv">$ </span>Activate CMS permission management <span class="o">(</span>choices: yes, no<span class="o">)</span> <span class="o">[</span>default yes<span class="o">]</span>: <span class="o">[</span>ENTER<span class="o">]</span>
 
-§ Username: admin
-§ Email address: admin@example.com 
-§ Password: admin
+<span class="nv">$ </span>Username: admin
+<span class="nv">$ </span>Email address: admin@example.com 
+<span class="nv">$ </span>Password: admin
 </pre></div>
 
 <h3>
-<a name="lets-run-it" class="anchor" href="#lets-run-it"><span class="octicon octicon-link"></span></a>let's run it</h3>
+<a name="create-a-template" class="anchor" href="#create-a-template"><span class="octicon octicon-link"></span></a>Create a template</h3>
 
-<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py runserver
+<p>The installer did most of the work for us, however we need to add our custom templates to the CMS. First, delete the two existing files in <code>demo/my_demo/templates/</code>. Afterwards, create these two files in that folder:</p>
+
+<p><strong><code>base.html</code></strong>:</p>
+
+<div class="highlight highlight-html"><pre>{% load cms_tags sekizai_tags menu_tags %}
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        {% render_block "css" %}
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        {% cms_toolbar %}
+        <span class="nt">&lt;ul&gt;</span>
+            {% show_menu 0 100 100 100 %}
+        <span class="nt">&lt;/ul&gt;</span>
+        {% block content %}{% endblock %}
+        {% render_block "js" %}
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+<p><strong><code>page.html</code></strong>:</p>
+
+<div class="highlight highlight-html"><pre>{% extends "base.html" %}
+{% load cms_tags sekizai_tags menu_tags placeholder_tags %}
+
+{% block content %}
+    {% placeholder content %}
+{% endblock %}
+</pre></div>
+
+<p>Next, open up <code>my_demo/settings.py</code>, look for <code>CMS_TEMPLATES</code> and change include our newly created <code>page.html</code> template:</p>
+
+<div class="highlight highlight-html"><pre>CMS_TEMPLATES = (
+    ('page.html', 'Page'),
+)
 </pre></div>
 
 <h3>
-<a name="where-to-go-from-here" class="anchor" href="#where-to-go-from-here"><span class="octicon octicon-link"></span></a>Where to go from here</h3>
+<a name="lets-run-it" class="anchor" href="#lets-run-it"><span class="octicon octicon-link"></span></a>Let's run it</h3>
 
-<p>Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch <a href="https://github.com/Chive/djangocms-tutorial/tree/step-2"><code>step-2</code></a> (You should know how that works by now :)</p>
+<p>Start the server:</p>
+
+<div class="highlight highlight-bash"><pre><span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>python manage.py runserver
+</pre></div>
+
+<p>Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch <a href="https://github.com/Chive/djangocms-tutorial/tree/step-2"><code>step-2</code></a> - You should know how that works by now :)</p>
 
 <h1>
-<a name="djangocms-tutorial---step-2" class="anchor" href="#djangocms-tutorial---step-2"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 2</h1>
+<a name="django-cms-tutorial---step-2" class="anchor" href="#django-cms-tutorial---step-2"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 2</h1>
 
 <p>Still with us? Great! So far we set up our environment by installing django, djangoCMS and all necessary dependencies. We also configured djangoCMS and ran it for the first time.</p>
 
 <p>Next up, we want to extend djangoCMS by installing an app. We're gonna be using the aldryn_blog module for this example. Let's get going!</p>
 
-<p>At first, we need to install the extension from the python Package Index (remember, always in the virtual environment!):</p>
+<p>At first, we need to install the extension from the Python Package Index (<a href="http://pypi.python.org">pypi.python.org</a>) (remember, always in the virtual environment!):</p>
 
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">source </span>env/bin/activate
-<span class="nv">$ </span>pip install aldryn-blog
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>pip install aldryn-blog
 </pre></div>
 
 <p>Add the apps below to <code>INSTALLED_APPS</code> in <code>settings.py</code>:</p>
@@ -159,23 +204,18 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 
 <p>Since we added a new app, we need to update our database. Thankfully, django comes with set of awesome tools which do most of the job. We just need to run the following two commands:</p>
 
-<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py syncdb
-<span class="nv">$ </span>python manage.py migrate
+<div class="highlight highlight-bash"><pre><span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>python manage.py syncdb
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>python manage.py migrate
 </pre></div>
 
 <p>and it's done.</p>
 
-<p>Finally, we need to copy a html template for our blog to our project:</p>
-
-<div class="highlight highlight-bash"><pre>cp ../djangocms-tutorial/sources/base.html my_demo/templates/
-</pre></div>
-
 <p>We can now run our server again</p>
 
-<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py runserver
+<div class="highlight highlight-bash"><pre><span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>python manage.py runserver
 </pre></div>
 
-<p>Now go to the admin panel at <a href="http://localhost:8000/admin">localhost:8000/admin</a> and</p>
+<p>Go to the admin panel at <a href="http://localhost:8000/admin">localhost:8000/admin</a> and</p>
 
 <ul>
 <li>Go to <em>Cms</em> &gt; <em>Pages</em> and add a new page</li>
@@ -183,25 +223,27 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <li>Under <em>Application</em>, select the 'Blog' application and give it a namespace (e.g. <code>myblog</code>)</li>
 <li>Save and publish the page</li>
 <li>Restart the server (<code>CTRL+C</code> and <code>python manage.py runserver</code> again)</li>
-<li>Now go to <em>Aldryn Blog</em> and add a new post</li>
-<li>Voila :)</li>
+<li>Back to your browser, refresh and select Blog from the toolbar. Now go on and add a new Blog post!</li>
+<li>Voila, your fist blog post! :)</li>
 </ul><p>Quick, check out <a href="https://github.com/Chive/djangocms-tutorial/tree/step-3"><code>step-3</code></a>!</p>
 
 <h1>
-<a name="djangocms-tutorial---step-3" class="anchor" href="#djangocms-tutorial---step-3"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 3</h1>
+<a name="django-cms-tutorial---step-3" class="anchor" href="#django-cms-tutorial---step-3"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 3</h1>
 
 <p>In this part of the tutorial we're going to take a django app and modify it like that so we can use it in the CMS. We're gonna use the django-poll app.</p>
 
 <p>You can either complete the tutorial here <a href="https://docs.djangoproject.com/en/dev/intro/tutorial01/">https://docs.djangoproject.com/en/dev/intro/tutorial01/</a> or copy the folder <code>polls</code> from <code>djangocms-tutorial/sources/</code> to your project root.</p>
 
-<div class="highlight highlight-bash"><pre>~/workspace/demo <span class="nv">$ </span>cp -r ../djangocms-tutorial/sources/polls .
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/workspace/djangocms-tutorial
+<span class="nv">$ </span>git checkout step-3
+<span class="nv">$ </span>cp -r sources/polls ../demo/
 </pre></div>
 
 <p>You should end up with this folder structure:</p>
 
 <pre><code>workspace
     djangocms-tutorial/
-    my_demo/
+    demo/
         env/
         manage.py
         my_demo/
@@ -322,8 +364,8 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 
 <p>Now to create the database tables for this model (using South):</p>
 
-<div class="highlight highlight-bash"><pre><span class="nv">$ </span>python manage.py schemamigration polls --initial
-<span class="nv">$ </span>python manage.py migrate polls
+<div class="highlight highlight-bash"><pre><span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>python manage.py schemamigration polls --initial
+<span class="o">(</span>env<span class="o">)</span> <span class="nv">$ </span>python manage.py migrate polls
 </pre></div>
 
 <p>Finally, run the server and go visit <a href="http://localhost:8000/polls/">http://localhost:8000/polls/</a>. Yay!</p>
@@ -338,11 +380,15 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <p>CMS Apps live in a file called <code>cms_app.py</code>, so go ahead and create it to make your polls app look like this:</p>
 
 <pre><code>polls/
+    migrations/
+    templates/
     __init__.py
+    admin.py
     cms_app.py
     cms_plugins.py
     models.py
     tests.py
+    urls.py
     views.py
 </code></pre>
 
@@ -352,9 +398,10 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <span class="kn">from</span> <span class="nn">cms.apphook_pool</span> <span class="kn">import</span> <span class="n">apphook_pool</span>
 <span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
 
+
 <span class="k">class</span> <span class="nc">PollsApp</span><span class="p">(</span><span class="n">CMSApp</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Poll App"</span><span class="p">)</span> <span class="c"># give your app a name, this is required</span>
-    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"polls.urls"</span><span class="p">]</span> <span class="c"># link your app to url configuration(s)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Poll App"</span><span class="p">)</span>  <span class="c"># give your app a name, this is required</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"polls.urls"</span><span class="p">]</span>  <span class="c"># link your app to url configuration(s)</span>
 
 <span class="n">apphook_pool</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PollsApp</span><span class="p">)</span> <span class="c"># register your app</span>
 </pre></div>
@@ -372,77 +419,10 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 
 <p>Again, for these changes to take effect, you will have to restart your server. So do that and afterwards if you navigate to that CMS Page, you will see your polls application.</p>
 
-<h3>
-<a name="my-first-menu" class="anchor" href="#my-first-menu"><span class="octicon octicon-link"></span></a>My First Menu</h3>
-
-<p>Now you might have noticed that the menu tree stops at the CMS Page you created in the last step. So let’s create a menu that shows a node for each poll you have active.</p>
-
-<p>For this we need a file called <code>menu.py</code>. Create it and ensure your polls app looks like this:</p>
-
-<pre><code>polls/
-    __init__.py
-    cms_app.py
-    cms_plugins.py
-    menu.py
-    models.py
-    tests.py
-    views.py
-</code></pre>
-
-<p>In your <code>menu.py</code> write:</p>
-
-<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.menu_bases</span> <span class="kn">import</span> <span class="n">CMSAttachMenu</span>
-<span class="kn">from</span> <span class="nn">menus.base</span> <span class="kn">import</span> <span class="n">Menu</span><span class="p">,</span> <span class="n">NavigationNode</span>
-<span class="kn">from</span> <span class="nn">menus.menu_pool</span> <span class="kn">import</span> <span class="n">menu_pool</span>
-<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
-<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
-<span class="kn">from</span> <span class="nn">polls.models</span> <span class="kn">import</span> <span class="n">Poll</span>
-
-<span class="k">class</span> <span class="nc">PollsMenu</span><span class="p">(</span><span class="n">CMSAttachMenu</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Polls Menu"</span><span class="p">)</span> <span class="c"># give the menu a name, this is required.</span>
-
-    <span class="k">def</span> <span class="nf">get_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        This method is used to build the menu tree.</span>
-<span class="sd">        """</span>
-        <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">poll</span> <span class="ow">in</span> <span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
-            <span class="c"># the menu tree consists of NavigationNode instances</span>
-            <span class="c"># Each NavigationNode takes a label as its first argument, a URL as</span>
-            <span class="c"># its second argument and a (for this tree) unique id as its third</span>
-            <span class="c"># argument.</span>
-            <span class="n">node</span> <span class="o">=</span> <span class="n">NavigationNode</span><span class="p">(</span>
-                <span class="n">poll</span><span class="o">.</span><span class="n">question</span><span class="p">,</span>
-                <span class="n">reverse</span><span class="p">(</span><span class="s">'polls.views.detail'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">poll</span><span class="o">.</span><span class="n">pk</span><span class="p">,)),</span>
-                <span class="n">poll</span><span class="o">.</span><span class="n">pk</span>
-            <span class="p">)</span>
-            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nodes</span>
-<span class="n">menu_pool</span><span class="o">.</span><span class="n">register_menu</span><span class="p">(</span><span class="n">PollsMenu</span><span class="p">)</span> <span class="c"># register the menu.</span>
-</pre></div>
-
-<p>At this point this menu alone doesn’t do a whole lot. We have to attach it to the Apphook first.</p>
-
-<p>So open your <code>cms_apps.py</code> and write:</p>
-
-<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.app_base</span> <span class="kn">import</span> <span class="n">CMSApp</span>
-<span class="kn">from</span> <span class="nn">cms.apphook_pool</span> <span class="kn">import</span> <span class="n">apphook_pool</span>
-<span class="kn">from</span> <span class="nn">polls.menu</span> <span class="kn">import</span> <span class="n">PollsMenu</span>
-<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
-
-<span class="k">class</span> <span class="nc">PollsApp</span><span class="p">(</span><span class="n">CMSApp</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s">"Poll App"</span><span class="p">)</span>
-    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s">"polls.urls"</span><span class="p">]</span>
-    <span class="n">menus</span> <span class="o">=</span> <span class="p">[</span><span class="n">PollsMenu</span><span class="p">]</span> <span class="c"># attach a CMSAttachMenu to this apphook.</span>
-    <span class="n">app_name</span> <span class="o">=</span> <span class="s">'polls'</span>
-
-<span class="n">apphook_pool</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PollsApp</span><span class="p">)</span>
-</pre></div>
-
 <p>Phew, quite some work done. If you're still on fire, check out branch <a href="https://github.com/Chive/djangocms-tutorial/tree/step-4"><code>step-4</code></a>!</p>
 
 <h1>
-<a name="djangocms-tutorial---step-4" class="anchor" href="#djangocms-tutorial---step-4"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 4</h1>
+<a name="django-cms-tutorial---step-4" class="anchor" href="#django-cms-tutorial---step-4"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 4</h1>
 
 <h2>
 <a name="extending-the-toolbar" class="anchor" href="#extending-the-toolbar"><span class="octicon octicon-link"></span></a>Extending the Toolbar</h2>
@@ -473,7 +453,7 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <code>app_path</code> (the name of the app used for the current request)</li>
 </ul><p>This classes must implement a populate function. The populate function will only be called if the current user is a staff user.</p>
 
-<p>A simple example, registering a class that does nothing:</p>
+<p>A simple example, registering a class that does nothing (<code>cms_toolbar.py</code>):</p>
 
 <div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">cms.toolbar_pool</span> <span class="kn">import</span> <span class="n">toolbar_pool</span>
 <span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
@@ -496,12 +476,13 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 
 <p>When adding items, all arguments other than the name or identifier should be given as keyword arguments. This will help ensure that your custom toolbar items survive upgrades.</p>
 
-<p>Following our Extending the CMS: Examples, let’s add the poll app to the toolbar:</p>
+<p>Following our Extending the CMS: Examples, let’s add the poll app to the toolbar (<code>cms_toolbar.py</code>):</p>
 
 <div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
 <span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
 <span class="kn">from</span> <span class="nn">cms.toolbar_pool</span> <span class="kn">import</span> <span class="n">toolbar_pool</span>
 <span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
+
 
 <span class="nd">@toolbar_pool.register</span>
 <span class="k">class</span> <span class="nc">PollToolbar</span><span class="p">(</span><span class="n">CMSToolbar</span><span class="p">):</span>
@@ -521,6 +502,7 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 <span class="kn">from</span> <span class="nn">cms.toolbar.items</span> <span class="kn">import</span> <span class="n">Break</span>
 <span class="kn">from</span> <span class="nn">cms.cms_toolbar</span> <span class="kn">import</span> <span class="n">ADMIN_MENU_IDENTIFIER</span><span class="p">,</span> <span class="n">ADMINISTRATION_BREAK</span>
 <span class="kn">from</span> <span class="nn">cms.toolbar_base</span> <span class="kn">import</span> <span class="n">CMSToolbar</span>
+
 
 <span class="nd">@toolbar_pool.register</span>
 <span class="k">class</span> <span class="nc">PollToolbar</span><span class="p">(</span><span class="n">CMSToolbar</span><span class="p">):</span>
@@ -558,10 +540,10 @@ git clone git@github.com:Chive/djangocms-tutorial.git
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'polls/detail.html'</span><span class="p">,</span> <span class="p">{</span><span class="s">'poll'</span><span class="p">:</span> <span class="n">poll</span><span class="p">})</span>
 </pre></div>
 
-<p>step-5: extending the page model</p>
+<p>Now, run the server again, go to the page where you hooked the Polls App to and select <code>Page</code> &gt; <code>Polls</code> in the toolbar! Next up: <a href="https://github.com/Chive/djangocms-tutorial/tree/step-5"><code>step-5</code></a> - extending the page model</p>
 
 <h1>
-<a name="djangocms-tutorial---step-5" class="anchor" href="#djangocms-tutorial---step-5"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 5</h1>
+<a name="django-cms-tutorial---step-5" class="anchor" href="#django-cms-tutorial---step-5"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 5</h1>
 
 <h2>
 <a name="extending-the-page-model" class="anchor" href="#extending-the-page-model"><span class="octicon octicon-link"></span></a>Extending the page model</h2>
@@ -601,7 +583,7 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 
 
 <span class="k">class</span> <span class="nc">PageTagAdmin</span><span class="p">(</span><span class="n">PageExtensionAdmin</span><span class="p">):</span>
-    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s">'extended_object'</span><span class="p">)</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s">'extended_object'</span><span class="p">]</span>
 
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">PageTag</span><span class="p">,</span> <span class="n">PageTagAdmin</span><span class="p">)</span>
 </pre></div>
@@ -642,11 +624,12 @@ git clone git@github.com:Chive/djangocms-tutorial.git
             <span class="n">page_tag</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">page_tag</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:pagetags_pagetag_change'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">page_tag</span>
-                                                                 <span class="o">.</span><span class="n">pk</span><span class="p">,))</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:pagetags_pagetag_change'</span><span class="p">,</span>
+                              <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">page_tag</span><span class="o">.</span><span class="n">pk</span><span class="p">,))</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'admin:pagetags_pagetag_add'</span><span class="p">)</span><span class="o">+</span><span class="s">'?extended_object'</span> \
-                                                            <span class="s">'=</span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">pk</span>
+                <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span>
+                    <span class="s">'admin:pagetags_pagetag_add'</span><span class="p">)</span>\
+                      <span class="o">+</span><span class="s">'?extended_object=</span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">pk</span>
         <span class="k">except</span> <span class="n">NoReverseMatch</span><span class="p">:</span>
             <span class="c"># not in urls</span>
             <span class="k">pass</span>
@@ -657,31 +640,43 @@ git clone git@github.com:Chive/djangocms-tutorial.git
                                              <span class="n">disabled</span><span class="o">=</span><span class="n">not_edit_mode</span><span class="p">)</span>
 </pre></div>
 
-<p>What we did here is # TODO: this.</p>
+<p>Congrats, we're finished with the app - let's add it to our project. Open up <code>my_demo/settings.py</code> and add <code>pagetags</code> to your <code>INSTALLED_APPS</code>. Afterwards, update your database using <code>python manage.py syncdb</code> and start the server again.</p>
+
+<p>You can now change a page's tags through the toolbar directly in the front end! (<code>Page</code> &gt; <code>Tags ...</code>) </p>
 
 <h1>
-<a name="djangocms-tutorial---step-6" class="anchor" href="#djangocms-tutorial---step-6"><span class="octicon octicon-link"></span></a>djangoCMS Tutorial - Step 6</h1>
+<a name="django-cms-tutorial---step-6" class="anchor" href="#django-cms-tutorial---step-6"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 6</h1>
+
+<p>During this tutorial or your experience with django itself you've probably seen the placeholders before:</p>
+
+<div class="highlight highlight-html"><pre>{% placeholder "content" %}
+</pre></div>
+
+<p>If you didn't, don't worry: Placeholders are an easy way to define sections in html code to be editable through our frontend editing. That's cool. But imaging the following situation: On your site, the footer should be editable through frontend. Sure, you could define a footer placeholder im the html template but that would mean that you'd have to insert the information on every single page you make - not so cool.</p>
+
+<p>So we came up with a solution: Stacks.</p>
 
 <h2>
-<a name="stacks-displaying-the-same-content-on-multiple-locations" class="anchor" href="#stacks-displaying-the-same-content-on-multiple-locations"><span class="octicon octicon-link"></span></a>Stacks: displaying the same content on multiple locations</h2>
+<a name="stacks" class="anchor" href="#stacks"><span class="octicon octicon-link"></span></a>Stacks</h2>
 
-<p>If you need to display the same content on multiple locations you can use stacks.</p>
+<p>Stacks is an easy way to display the same content on multiple locations on your website. Stacks have a name and a placeholder attached to them. Once a stack is created and you added content to it, it will be saved globally. Even when you remove the stack you can reuse it at sometime later again.</p>
 
-<p>Stacks have a name and a placeholder attached to them. There are 3 ways to use stacks.</p>
+<p>There are 3 ways to use stacks.</p>
 
 <h3>
 <a name="1-stack-template-tags" class="anchor" href="#1-stack-template-tags"><span class="octicon octicon-link"></span></a>1. Stack Template Tags</h3>
 
-<p>You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:
-    * Footer
-    * Logo
-    * Header
-    * Text or content inside you app
-    * Text or content inside of 3th party apps.</p>
+<p>You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:</p>
 
-<p><strong>Example:</strong></p>
+<ul>
+<li>Footer</li>
+<li>Logo</li>
+<li>Header</li>
+<li>Text or content inside you app</li>
+<li>Text or content inside of 3th party apps.</li>
+</ul><p><strong>Example:</strong></p>
 
-<div class="highlight highlight-python"><pre><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">stack_tags</span> <span class="o">%</span><span class="p">}</span> <span class="p">{</span><span class="o">%</span> <span class="n">stack</span> <span class="err">“</span><span class="n">footer</span><span class="err">”</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight highlight-python"><pre><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">stack_tags</span> <span class="o">%</span><span class="p">}</span> <span class="p">{</span><span class="o">%</span> <span class="n">stack</span> <span class="s">"footer"</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
 
 <p><strong><em>Note:</em></strong> It is recommended to use stacks in your apphook apps instead of show_placeholder templatetags</p>
@@ -696,7 +691,36 @@ git clone git@github.com:Chive/djangocms-tutorial.git
 
 <p>If you create stacks out of plugin tree you can paste the plugins contained in a stack as template. For example you can create a teaser plugin tree out of a multicolumn, text and picture plugin. You can then paste this template at the appropriate place and just edit the plugins instead of creating the same structure over and over.</p>
 
-<p>`# TODO: improve</p>
+<h3>
+<a name="lets-create-a-footer" class="anchor" href="#lets-create-a-footer"><span class="octicon octicon-link"></span></a>Let's create a footer!</h3>
+
+<p>But that's theory, let's implement a footer!</p>
+
+<p>Since we want our footer on every single page, we should add it to our base template (<code>my_demo/templates/base.html</code>). So open it up and add <code>stack_tags</code> to the <code>load</code> tag at the top and add a new <code>stack</code> (e.g. <code>my_footer</code>) at the bottom of the html body. In the end it should look something like this:</p>
+
+<div class="highlight highlight-html"><pre>{% load cms_tags sekizai_tags menu_tags placeholder_tags stack_tags %}
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        {% render_block "css" %}
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        {% cms_toolbar %}
+        <span class="nt">&lt;ul&gt;</span>
+            {% show_menu 0 100 100 100 %}
+        <span class="nt">&lt;/ul&gt;</span>
+        {% block content %}{% endblock %}
+        {% stack "my_footer" %}
+        {% render_block "js" %}
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+<p>Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!</p>
+
+<h1>
+<a name="django-cms-tutorial---step-7" class="anchor" href="#django-cms-tutorial---step-7"><span class="octicon octicon-link"></span></a>django CMS Tutorial - Step 7</h1>
+
+<p>Hey - well done, you've made it all the way through! Congrats!</p>
       </section>
 
     </div>
