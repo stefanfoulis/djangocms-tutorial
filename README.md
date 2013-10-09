@@ -32,9 +32,9 @@ $ source env/bin/activate
 (env) $ pip install git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 
-### Install djangoCMS
+### Install django CMS
 
-We're now about to install djangoCMS. We'll do that using previously installed `aldryn-installer` since it's easy and hassle-free. Just follow the interactive setup, don't worry if takes a while :)
+We're now about to install django CMS. We'll do that using previously installed `aldryn-installer` since it's easy and hassle-free. Just follow the interactive setup, don't worry if takes a while :)
 
 ```bash
 (env) $ aldryn -p . my_demo
