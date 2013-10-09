@@ -1,5 +1,5 @@
-djangoCMS Tutorial
-==================
+django CMS Tutorial
+===================
 
 Before we start
 ---------------
@@ -25,8 +25,8 @@ Now checkout branch [`step-1`](https://github.com/Chive/djangocms-tutorial/tree/
 git checkout step-1
 ```
 
-djangoCMS Tutorial - Step 1
-===========================
+django CMS Tutorial - Step 1
+============================
 Hey, you made it! Great. Now let's get started by setting up our environment.
 
 Preparing your workstation
@@ -56,7 +56,7 @@ Let's set up the virtual environment and install `aldryn-installer`:
 ```bash
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
-(env) $ pip install -e git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
+(env) $ pip install git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 
 ### Install djangoCMS
@@ -70,19 +70,19 @@ We're now about to install djangoCMS. We'll do that using previously installed `
 If you want to be safe, use the settings below:
 
 ```bash
-§ Database configuration (in URL format) [default sqlite://locahost/project.db]: [ENTER]
-§ django CMS version (choices: 2.4, stable, beta, develop) [default stable]: develop
-§ Django version (choices: 1.4, 1.5, stable) [default stable]: 1.5
-§ Activate Django I18N / L10N setting (choices: yes, no) [default yes]: [ENTER]
-§ Install and configure reversion support (choices: yes, no) [default yes]: [ENTER]
-§ Languages to enable. Option can be provided multiple times, or as a comma separated list: en,de
-§ Optional default timezone [default America/Chicago]: Europe/Zurich
-§ Activate Django timezone support (choices: yes, no) [default yes]: [ENTER]
-§ Activate CMS permission management (choices: yes, no) [default yes]: [ENTER]
+$ Database configuration (in URL format) [default sqlite://locahost/project.db]: [ENTER]
+$ django CMS version (choices: 2.4, stable, beta, develop) [default stable]: develop
+$ Django version (choices: 1.4, 1.5, stable) [default stable]: 1.5
+$ Activate Django I18N / L10N setting (choices: yes, no) [default yes]: [ENTER]
+$ Install and configure reversion support (choices: yes, no) [default yes]: [ENTER]
+$ Languages to enable. Option can be provided multiple times, or as a comma separated list: en,de
+$ Optional default timezone [default America/Chicago]: Europe/Zurich
+$ Activate Django timezone support (choices: yes, no) [default yes]: [ENTER]
+$ Activate CMS permission management (choices: yes, no) [default yes]: [ENTER]
 
-§ Username: admin
-§ Email address: admin@example.com 
-§ Password: admin
+$ Username: admin
+$ Email address: admin@example.com 
+$ Password: admin
 ```
 
 ### Create a template
@@ -136,8 +136,8 @@ Start the server:
 
 Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
 
-djangoCMS Tutorial - Step 2
-===========================
+django CMS Tutorial - Step 2
+============================
 Still with us? Great! So far we set up our environment by installing django, djangoCMS and all necessary dependencies. We also configured djangoCMS and ran it for the first time.
 
 Next up, we want to extend djangoCMS by installing an app. We're gonna be using the aldryn_blog module for this example. Let's get going!
@@ -190,8 +190,8 @@ Go to the admin panel at [localhost:8000/admin](http://localhost:8000/admin) and
 
 Quick, check out [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)!
 
-djangoCMS Tutorial - Step 3
-===========================
+django CMS Tutorial - Step 3
+============================
 In this part of the tutorial we're going to take a django app and modify it like that so we can use it in the CMS. We're gonna use the django-poll app.
 
 You can either complete the tutorial here <https://docs.djangoproject.com/en/dev/intro/tutorial01/> or copy the folder `polls` from `djangocms-tutorial/sources/` to your project root.
@@ -387,8 +387,8 @@ Again, for these changes to take effect, you will have to restart your server. S
 
 Phew, quite some work done. If you're still on fire, check out branch [`step-4`](https://github.com/Chive/djangocms-tutorial/tree/step-4)!
 
-djangoCMS Tutorial - Step 4
-===========================
+django CMS Tutorial - Step 4
+============================
 Extending the Toolbar
 ---------------------
 In the new version 3.0 you can add and remove items to the toolbar. This allows you to integrate your application in the frontend editing mode of django CMS and provide your users with a streamlined editing experience.
@@ -500,8 +500,8 @@ def detail(request, poll_id):
 
 Now, run the server again, go to the page where you hooked the Polls App to and select `Page` > `Polls` in the toolbar! Next up: [`step-5`](https://github.com/Chive/djangocms-tutorial/tree/step-5) - extending the page model
 
-djangoCMS Tutorial - Step 5
-===========================
+django CMS Tutorial - Step 5
+============================
 Extending the page model
 ------------------------
 Create a new python module in your project root - let's call it `pagetags`. Add all the files below:
@@ -600,8 +600,8 @@ Congrats, we're finished with the app - let's add it to our project. Open up `my
 
 You can now change a page's tags through the toolbar directly in the front end! (`Page` > `Tags ...`) 
 
-djangoCMS Tutorial - Step 6
-===========================
+django CMS Tutorial - Step 6
+============================
 During this tutorial or your experience with django itself you've probably seen the placeholders before:
 
 ```html
@@ -670,7 +670,7 @@ Since we want our footer on every single page, we should add it to our base temp
 
 Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!
 
-djangoCMS Tutorial - Step 7
-===========================
+django CMS Tutorial - Step 7
+============================
 
 Hey - well done, you've made it all the way through! Congrats!
