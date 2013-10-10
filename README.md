@@ -20,7 +20,7 @@ These have four attributes:
 * `is_current_app` (a flag indicating whether the current request is handled by the same app as the function is in)
 * `app_path` (the name of the app used for the current request)
 
-This classes must implement a populate function. The populate function will only be called if the current user is a staff user.
+This classes must implement a `populate` method. The `populate` method will only be called if the current user is a staff user.
 
 A simple example, registering a class that does nothing (`cms_toolbar.py`):
 
