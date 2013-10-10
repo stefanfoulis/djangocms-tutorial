@@ -1,4 +1,4 @@
-django CMS Tutorial - Step 2
+django CMS Tutorial - Step 3
 ============================
 Still with us? Great! So far we set up our environment by installing django, djangoCMS and all necessary dependencies. We also configured djangoCMS and ran it for the first time.
 
@@ -50,4 +50,4 @@ Go to the admin panel at [localhost:8000/admin](http://localhost:8000/admin) and
 * Back to your browser, refresh and select Blog from the toolbar. Now go on and add a new Blog post!
 * Voila, your fist blog post! :)
 
-Quick, check out [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)!
+Quick, check out [`step-4`](https://github.com/Chive/djangocms-tutorial/tree/step-4)!
