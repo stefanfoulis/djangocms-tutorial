@@ -1,4 +1,4 @@
-django CMS Tutorial - Step 6
+django CMS Tutorial - Step 2
 ============================
 During this tutorial or your experience with django itself you've probably seen the placeholders before:
 
@@ -68,5 +68,5 @@ Since we want our footer on every single page, we should add it to our base temp
 
 Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!
 
-So, we're almost at the end! You can check out [`step-7`](https://github.com/Chive/djangocms-tutorial/tree/step-7) to see solution for this step.
+Next up: [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)
 
