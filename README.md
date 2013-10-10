@@ -1,4 +1,4 @@
-django CMS Tutorial - Step 4
+django CMS Tutorial - Step 5
 ============================
 Extending the Toolbar
 ---------------------
@@ -109,4 +109,4 @@ def detail(request, poll_id):
     return render(request, 'polls/detail.html', {'poll': poll})
 ```
 
-Now, run the server again, go to the page where you hooked the Polls App to and select `Page` > `Polls` in the toolbar! Next up: [`step-5`](https://github.com/Chive/djangocms-tutorial/tree/step-5) - extending the page model
+Now, run the server again, go to the page where you hooked the Polls App to and select `Page` > `Polls` in the toolbar! Next up: [`step-6`](https://github.com/Chive/djangocms-tutorial/tree/step-6) - extending the page model
