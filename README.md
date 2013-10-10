@@ -1,4 +1,4 @@
-django CMS Tutorial - Step 5
+django CMS Tutorial - Step 6
 ============================
 Extending the page model
 ------------------------
@@ -98,4 +98,4 @@ Congrats, we're finished with the app - let's add it to our project. Open up `my
 
 You can now change a page's tags through the toolbar directly in the front end! (`Page` > `Tags ...`)
 
-Continue by checking out [`step-6`](https://github.com/Chive/djangocms-tutorial/tree/step-6)
+So, we're almost at the end! You can check out [`step-7`](https://github.com/Chive/djangocms-tutorial/tree/step-7) to see solution for this step.
