@@ -1,4 +1,4 @@
-django CMS Tutorial - Step 3
+django CMS Tutorial - Step 4
 ============================
 In this part of the tutorial we're going to take a django app and modify it like that so we can use it in the CMS. We're gonna use the django-poll app.
 
@@ -193,4 +193,4 @@ Now open your admin in your browser and edit a CMS Page. Open the ‘Advanced Se
 
 Again, for these changes to take effect, you will have to restart your server. So do that and afterwards if you navigate to that CMS Page, you will see your polls application.
 
-Phew, quite some work done. If you're still on fire, check out branch [`step-4`](https://github.com/Chive/djangocms-tutorial/tree/step-4)!
+Phew, quite some work done. If you're still on fire, check out branch [`step-5`](https://github.com/Chive/djangocms-tutorial/tree/step-5)!
