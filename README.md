@@ -59,11 +59,17 @@ $ source env/bin/activate
 (env) $ pip install git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
 ```
 
+***Note:*** If you're using windows, activate the virtualenv by doing this instead:
+
+```bash
+$ env\Scriptsctivate
+```
+
 ### Install django CMS
 
 We're now about to install django CMS. We'll do that using previously installed `aldryn-installer` since it's easy and hassle-free. Just follow the interactive setup, don't worry if takes a while :)
 
-```bash
+```
 (env) $ aldryn -p . my_demo
 ```
 
@@ -135,6 +141,78 @@ Start the server:
 ```
 
 Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
+
+django CMS Tutorial - Step 6
+============================
+During this tutorial or your experience with django itself you've probably seen the placeholders before:
+
+```html
+{% placeholder "content" %}
+```
+
+If you didn't, don't worry: Placeholders are an easy way to define sections in html code to be editable through our frontend editing. That's cool. But imaging the following situation: On your site, the footer should be editable through frontend. Sure, you could define a footer placeholder im the html template but that would mean that you'd have to insert the information on every single page you make - not so cool.
+
+So we came up with a solution: Stacks.
+
+Stacks
+------
+
+Stacks is an easy way to display the same content on multiple locations on your website. Stacks have a name and a placeholder attached to them. Once a stack is created and you added content to it, it will be saved globally. Even when you remove the stack you can reuse it at sometime later again.
+
+There are 3 ways to use stacks.
+
+### 1. Stack Template Tags	
+You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:
+
+* Footer
+* Logo
+* Header
+* Text or content inside you app
+* Text or content inside of 3th party apps.
+	
+**Example:**
+	
+```python
+{% load stack_tags %} {% stack "footer" %}
+```
+	
+***Note:*** It is recommended to use stacks in your apphook apps instead of show_placeholder templatetags
+
+### 2. Stack Plugins
+
+You can create a stack out of plugins. You can create stacks out of plugin trees. After you created a stack this way you can insert a stack plugin and select a stack to be displayed instead of the stack plugin.
+
+### 3. Stacks as templates
+
+If you create stacks out of plugin tree you can paste the plugins contained in a stack as template. For example you can create a teaser plugin tree out of a multicolumn, text and picture plugin. You can then paste this template at the appropriate place and just edit the plugins instead of creating the same structure over and over.
+
+### Let's create a footer!
+
+But that's theory, let's implement a footer!
+
+Since we want our footer on every single page, we should add it to our base template (`my_demo/templates/base.html`). So open it up and add `stack_tags` to the `load` tag at the top and add a new `stack` (e.g. `my_footer`) at the bottom of the html body. In the end it should look something like this:
+
+```html
+{% load cms_tags sekizai_tags menu_tags placeholder_tags stack_tags %}
+<html>
+    <head>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        <ul>
+            {% show_menu 0 100 100 100 %}
+        </ul>
+        {% block content %}{% endblock %}
+		{% stack "my_footer" %}
+        {% render_block "js" %}
+    </body>
+</html>
+```
+
+Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!
+
+So, we're almost at the end! You can check out [`step-7`](https://github.com/Chive/djangocms-tutorial/tree/step-7) to see solution for this step.
 
 django CMS Tutorial - Step 2
 ============================
@@ -409,7 +487,7 @@ These have four attributes:
 * `is_current_app` (a flag indicating whether the current request is handled by the same app as the function is in)
 * `app_path` (the name of the app used for the current request)
 
-This classes must implement a populate function. The populate function will only be called if the current user is a staff user.
+This classes must implement a `populate` method. The `populate` method will only be called if the current user is a staff user.
 
 A simple example, registering a class that does nothing (`cms_toolbar.py`):
 
@@ -598,77 +676,9 @@ class PageTagsToolbar(CMSToolbar):
 
 Congrats, we're finished with the app - let's add it to our project. Open up `my_demo/settings.py` and add `pagetags` to your `INSTALLED_APPS`. Afterwards, update your database using `python manage.py syncdb` and start the server again.
 
-You can now change a page's tags through the toolbar directly in the front end! (`Page` > `Tags ...`) 
+You can now change a page's tags through the toolbar directly in the front end! (`Page` > `Tags ...`)
 
-django CMS Tutorial - Step 6
-============================
-During this tutorial or your experience with django itself you've probably seen the placeholders before:
-
-```html
-{% placeholder "content" %}
-```
-
-If you didn't, don't worry: Placeholders are an easy way to define sections in html code to be editable through our frontend editing. That's cool. But imaging the following situation: On your site, the footer should be editable through frontend. Sure, you could define a footer placeholder im the html template but that would mean that you'd have to insert the information on every single page you make - not so cool.
-
-So we came up with a solution: Stacks.
-
-Stacks
-------
-
-Stacks is an easy way to display the same content on multiple locations on your website. Stacks have a name and a placeholder attached to them. Once a stack is created and you added content to it, it will be saved globally. Even when you remove the stack you can reuse it at sometime later again.
-
-There are 3 ways to use stacks.
-
-### 1. Stack Template Tags	
-You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:
-
-* Footer
-* Logo
-* Header
-* Text or content inside you app
-* Text or content inside of 3th party apps.
-	
-**Example:**
-	
-```python
-{% load stack_tags %} {% stack "footer" %}
-```
-	
-***Note:*** It is recommended to use stacks in your apphook apps instead of show_placeholder templatetags
-
-### 2. Stack Plugins
-
-You can create a stack out of plugins. You can create stacks out of plugin trees. After you created a stack this way you can insert a stack plugin and select a stack to be displayed instead of the stack plugin.
-
-### 3. Stacks as templates
-
-If you create stacks out of plugin tree you can paste the plugins contained in a stack as template. For example you can create a teaser plugin tree out of a multicolumn, text and picture plugin. You can then paste this template at the appropriate place and just edit the plugins instead of creating the same structure over and over.
-
-### Let's create a footer!
-
-But that's theory, let's implement a footer!
-
-Since we want our footer on every single page, we should add it to our base template (`my_demo/templates/base.html`). So open it up and add `stack_tags` to the `load` tag at the top and add a new `stack` (e.g. `my_footer`) at the bottom of the html body. In the end it should look something like this:
-
-```html
-{% load cms_tags sekizai_tags menu_tags placeholder_tags stack_tags %}
-<html>
-    <head>
-        {% render_block "css" %}
-    </head>
-    <body>
-        {% cms_toolbar %}
-        <ul>
-            {% show_menu 0 100 100 100 %}
-        </ul>
-        {% block content %}{% endblock %}
-		{% stack "my_footer" %}
-        {% render_block "js" %}
-    </body>
-</html>
-```
-
-Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!
+Continue by checking out [`step-6`](https://github.com/Chive/djangocms-tutorial/tree/step-6)
 
 django CMS Tutorial - Step 7
 ============================
