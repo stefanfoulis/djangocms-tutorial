@@ -1,23 +1,12 @@
-Solution Step 1
-===========================
-This is the solution to step 1. If you messed up or want to continue with a clean solution, copy the contents of this folder to your project folder
+Solution to Step 2
+==================
+This is the solution to step 2. Copy the files from this directory to your project folder and run the `init.sh` script.
 
+```bash
+cd ~/workspace/djangocms-tutorial
+git checkout step-3
+cp -r solution/* ../demo
+
+cd ../demo
+./init.sh
 ```
-$ cd ~/workspace/djangocms-tutorial
-$ git checkout step-2
-$ cp -r solution/* ../demo
-$ cd ../demo
-```
-
-
-and setup your environment:
-
-```
-$ virtualenv env --no-site-packages
-$ source env/bin/activate
-$ pip install -r requirements.txt
-```
-
-
-
-*is that all?*
