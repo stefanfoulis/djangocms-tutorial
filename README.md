@@ -65,7 +65,7 @@ class PollPlugin(CMSPlugin):
 **Note:** django CMS plugins must inherit from `cms.models.CMSPlugin` (or a subclass thereof) and not `models.Model`.
 
 ### The Plugin Class
-Now create a file `cms_plugins.py` in the same folder your models.py is in. The plugin class is responsible for providing the django CMS with the necessary information to render your Plugin.
+Now create a file `cms_plugins.py` in the same folder your models.py is in. The plugin class is responsible for providing django CMS with the necessary information to render your Plugin.
 
 For our poll plugin, write the following plugin class:
 
@@ -144,7 +144,7 @@ Finally, run the server and go visit <http://localhost:8000/polls/>. Yay!
 
 
 ### My First App (apphook)
-Right now, external apps are statically hooked into the main `urls.py`. This is not the preferred approach in the django CMS. Ideally you attach your apps to CMS pages.
+Right now, external apps are statically hooked into the main `urls.py`. This is not the preferred approach in django CMS. Ideally you attach your apps to CMS pages.
 
 For that purpose you write a CMSApp. That is just a small class telling the CMS how to include that app.
 
