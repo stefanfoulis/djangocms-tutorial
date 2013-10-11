@@ -53,7 +53,7 @@ C:\Windows\system32> assoc .py=Python.file
 .py=Python.file
 
 C:\Windows\system32> ftype Python.File="C:\Users\Username\workspace\demo\env\Scripts\python.exe" "%1" %*
-Python.File="C:\Users\IEUser\workspace\demo\env\Scripts\python.exe" "%1" %*
+Python.File="C:\Users\Username\workspace\demo\env\Scripts\python.exe" "%1" %*
 ```
 
 If you want to be safe, use the settings below:
