@@ -6,7 +6,7 @@ You can either complete the tutorial here <https://docs.djangoproject.com/en/dev
 
 ```bash
 $ cd ~/workspace/djangocms-tutorial
-$ git checkout step-3
+$ git checkout step-4
 $ cp -r sources/polls ../demo/
 ```
 
