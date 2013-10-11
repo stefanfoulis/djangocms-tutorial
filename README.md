@@ -29,13 +29,13 @@ Let's set up the virtual environment and install `aldryn-installer`:
 ```bash
 $ virtualenv env --no-site-packages
 $ source env/bin/activate
-(env) $ pip install git+https://github.com/nephila/aldryn-installer#egg=aldryn-installer
+(env) $ pip install git+https://github.com/Chive/aldryn-installer#egg=aldryn-installer
 ```
 
 ***Note:*** If you're using windows, activate the virtualenv by doing this instead:
 
 ```bash
-$ env\Scripts\activate
+> env\Scripts\activate
 ```
 
 ### Install django CMS
@@ -44,6 +44,16 @@ We're now about to install django CMS. We'll do that using previously installed 
 
 ```
 (env) $ aldryn -p . my_demo
+```
+
+***Note:*** Again, if you're using windows you'll have to make sure your python files are associated correctly. Open up a shell with admin rights:
+
+```bash
+C:\Windows\system32> assoc .py=Python.file
+.py=Python.file
+
+C:\Windows\system32> ftype Python.File="C:\Users\Username\workspace\demo\env\Scripts\python.exe" "%1" %*
+Python.File="C:\Users\IEUser\workspace\demo\env\Scripts\python.exe" "%1" %*
 ```
 
 If you want to be safe, use the settings below:
