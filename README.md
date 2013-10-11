@@ -98,4 +98,4 @@ Congrats, we're finished with the app - let's add it to our project. Open up `my
 
 You can now change a page's tags through the toolbar directly in the frontend! (`Page` > `Tags ...`)
 
-So, we're almost at the end! You can check out [`step-7`](https://github.com/Chive/djangocms-tutorial/tree/step-7) to see solution for this step.
+And that's it - you've made it! Well done! Feel free to check out [`step-7`](https://github.com/Chive/djangocms-tutorial/tree/step-7) if you want to have a look at the solution for this step.
