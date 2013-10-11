@@ -32,7 +32,7 @@ $ source env/bin/activate
 (env) $ pip install git+https://github.com/Chive/aldryn-installer#egg=aldryn-installer
 ```
 
-***Note:*** If you're using windows, activate the virtualenv by doing this instead:
+***Note:*** If you're using windows, activate the virtual environment by doing this instead:
 
 ```bash
 > env\Scripts\activate
