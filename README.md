@@ -96,6 +96,6 @@ class PageTagsToolbar(CMSToolbar):
 
 Congrats, we're finished with the app - let's add it to our project. Open up `my_demo/settings.py` and add `pagetags` to your `INSTALLED_APPS`. Afterwards, update your database using `python manage.py syncdb` and start the server again.
 
-You can now change a page's tags through the toolbar directly in the front end! (`Page` > `Tags ...`)
+You can now change a page's tags through the toolbar directly in the frontend! (`Page` > `Tags ...`)
 
 So, we're almost at the end! You can check out [`step-7`](https://github.com/Chive/djangocms-tutorial/tree/step-7) to see solution for this step.
