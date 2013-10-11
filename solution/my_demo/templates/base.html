@@ -1,0 +1,15 @@
+{% load cms_tags sekizai_tags menu_tags placeholder_tags stack_tags %}
+<html>
+    <head>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        <ul>
+            {% show_menu 0 100 100 100 %}
+        </ul>
+        {% block content %}{% endblock %}
+        {% stack "my_footer" %}
+        {% render_block "js" %}
+    </body>
+</html>
