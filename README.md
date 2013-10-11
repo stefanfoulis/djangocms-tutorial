@@ -6,7 +6,7 @@ During this tutorial or your experience with django itself you've probably seen 
 {% placeholder "content" %}
 ```
 
-If you didn't, don't worry: Placeholders are an easy way to define sections in html code to be editable through our frontend editing. That's cool. But imaging the following situation: On your site, the footer should be editable through frontend. Sure, you could define a footer placeholder im the html template but that would mean that you'd have to insert the information on every single page you make - not so cool.
+If you didn't, don't worry: Placeholders are an easy way to define sections in html code to be editable through our frontend editing. That's cool. But imagine the following situation: On your site, the footer should be editable through frontend. Sure, you could define a footer placeholder im the html template but that would mean that you'd have to insert the information on every single page you make - not so cool.
 
 So we came up with a solution: Stacks.
 
@@ -18,13 +18,13 @@ Stacks is an easy way to display the same content on multiple locations on your 
 There are 3 ways to use stacks.
 
 ### 1. Stack Template Tags	
-You can use a template tag to display a placeholder in a template without the need for an actual placeholder on you models. This can be useful for:
+You can use a template tag to display a placeholder in a template without the need for an actual placeholder in your models. This can be useful for:
 
 * Footer
 * Logo
 * Header
 * Text or content inside you app
-* Text or content inside of 3th party apps.
+* Text or content inside of 3rd party apps.
 	
 **Example:**
 	
