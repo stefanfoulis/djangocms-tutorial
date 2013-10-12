@@ -5,7 +5,7 @@ aldryn-blog==0.1.4
 git+https://github.com/Chive/aldryn-installer#egg=aldryn-installer
 dj-database-url==0.2.2
 django-classy-tags==0.4
-django-cms==3.0.0.beta2
+https://github.com/divio/django-cms/archive/develop.zip
 django-mptt==0.5.2
 django-reversion==1.7.1
 django-sekizai==0.7
