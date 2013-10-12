@@ -2,7 +2,7 @@ Django==1.5.4
 Pillow==2.2.1
 South==0.8.2
 aldryn-blog==0.1.4
-aldryn-installer==0.1.0
+git+https://github.com/Chive/aldryn-installer#egg=aldryn-installer
 dj-database-url==0.2.2
 django-classy-tags==0.4
 django-cms==3.0.0.beta2
