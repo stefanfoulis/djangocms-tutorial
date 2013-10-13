@@ -176,7 +176,7 @@ class PollsApp(CMSApp):
     name = _("Poll App")  # give your app a name, this is required
     urls = ["polls.urls"]  # link your app to url configuration(s)
 
-apphook_pool.register(PollsApp) # register your app
+apphook_pool.register(PollsApp)  # register your app
 ```
 
 Now remove the inclusion of the polls urls in your project's `urls.py` so it looks like this:
