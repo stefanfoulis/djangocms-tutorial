@@ -123,4 +123,16 @@ Start the server:
 (env) $ python manage.py runserver
 ```
 
-Congratulations, you now have a fully functional CMS! Awesome job! Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
+Now you can open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser and should see the django-cms welcome screen.
+
+Congratulations, you now have a fully functional CMS! Awesome job!
+
+Let's login and add some content:
+
+* click on the [Switch to edit mode](http://localhost:8000/?edit) and login with the user you created earlier.
+* click on the add page link. Enter "home" as title of your new page and save.
+* workaround: open "example.com" -> "Pages …" and click on the publish icon of your newly created page.
+* switch to the `structure` mode and start adding plugins. A good one to start with is the "Text"-Plugin
+
+
+Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
