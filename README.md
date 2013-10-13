@@ -127,7 +127,7 @@ Secondly, add it to the project's `urls.py` so it looks something like this:
 ```python
 urlpatterns = i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^polls/', include('polls.urls')),
+    url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^', include('cms.urls')),
 )
