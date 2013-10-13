@@ -132,7 +132,7 @@ Let's login and add some content:
 * click on the [Switch to edit mode](http://localhost:8000/?edit) and login with the user you created earlier.
 * click on the add page link. Enter "home" as title of your new page and save.
 * workaround: open "example.com" -> "Pages …" and click on the publish icon of your newly created page.
-* switch to the `structure` mode and start adding plugins. A good one to start with is the "Text"-Plugin
+* switch to the `structure` mode and start adding plugins. A good one to start with is the "Text"-Plugin.
 
 
 Let's continue by checking out branch [`step-2`](https://github.com/Chive/djangocms-tutorial/tree/step-2) - You should know how that works by now :)
