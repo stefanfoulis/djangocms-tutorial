@@ -20,7 +20,7 @@ These have four attributes:
 * `is_current_app` (a flag indicating whether the current request is handled by the same app as the function is in)
 * `app_path` (the name of the app used for the current request)
 
-This classes must implement a `populate` method. The `populate` method will only be called if the current user is a staff user.
+These classes must implement a `populate` method. The `populate` method will only be called if the current user is a staff user.
 
 A simple example, registering a class that does nothing (`cms_toolbar.py`):
 
@@ -29,16 +29,17 @@ from cms.toolbar_pool import toolbar_pool
 from cms.toolbar_base import CMSToolbar
 
 @toolbar_pool.register
-class MoopModifier(CMSToolbar):
+class NoopModifier(CMSToolbar):
 
     def populate(self):
         pass
 ```
 
 ### Adding items
+
 Items can be added through the various APIs exposed by the toolbar and its items.
 
-To add a `cms.toolbar.items.Menu` to the toolbar, use `cms.toolbar.toolbar.CMSToolbar.get_or_create_menu()` which will either add a menu if it doesn’t exist, or create it.
+To add a `cms.toolbar.items.Menu` to the toolbar, use `cms.toolbar.toolbar.CMSToolbar.get_or_create_menu()` which will either add a menu if it doesn’t exist, or get an existing one.
 
 Then, to add a link to your changelist that will open in the sideframe, use the `cms.toolbar.items.ToolbarMixin.add_sideframe_item()` method on the menu object returned.
 
