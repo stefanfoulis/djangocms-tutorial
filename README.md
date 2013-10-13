@@ -66,7 +66,7 @@ Since we want our footer on every single page, we should add it to our base temp
 </html>
 ```
 
-Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites (e.g. the poll and the blog page) to see that the footer appears there too!
+Save the template and go back to your browser. Change to draft and then structure mode and fill in content into your footer! After you've saved it, go check out the other pages on your websites to see that the footer appears there too!
 
 Next up: [`step-3`](https://github.com/Chive/djangocms-tutorial/tree/step-3)
 
