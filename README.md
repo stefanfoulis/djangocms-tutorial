@@ -25,13 +25,13 @@ You can use a template tag to display a placeholder in a template without the ne
 * Header
 * Text or content inside you app
 * Text or content inside of 3rd party apps.
-	
+
 **Example:**
-	
+
 ```python
 {% load stack_tags %} {% stack "footer" %}
 ```
-	
+
 ***Note:*** It is recommended to use stacks in your apphook apps instead of show_placeholder templatetags
 
 ### 2. Stack Plugins
@@ -60,7 +60,7 @@ Since we want our footer on every single page, we should add it to our base temp
             {% show_menu 0 100 100 100 %}
         </ul>
         {% block content %}{% endblock %}
-		{% stack "my_footer" %}
+        {% stack "my_footer" %}
         {% render_block "js" %}
     </body>
 </html>
