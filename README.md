@@ -98,12 +98,12 @@ The template is located at `polls/templates/polls/plugin.html` and should look s
 <h1>{{ instance.poll.question }}</h1>
 
 <form action="{% url polls.views.vote instance.poll.id %}" method="post">
-	{% csrf_token %}
-	{% for choice in instance.poll.choice_set.all %}
-    	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-		<label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br />
-	{% endfor %}
-	<input type="submit" value="Vote" />
+    {% csrf_token %}
+    {% for choice in instance.poll.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+        <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label><br />
+    {% endfor %}
+    <input type="submit" value="Vote" />
 </form>
 ```
 
@@ -114,8 +114,8 @@ Quite some work done by now, let's add it to our project. Add your polls plugin 
 ```python
 INSTALLED_APPS = (
 
-	...
-	
+    ...
+
     'polls',
     
     ...
@@ -152,8 +152,8 @@ CMS Apps live in a file called `cms_app.py`, so go ahead and create it to make y
 
 ```
 polls/
-	migrations/
-	templates/
+    migrations/
+    templates/
     __init__.py
     admin.py
     cms_app.py
